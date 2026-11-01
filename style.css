@@ -1,4 +1,4 @@
-/* Habit Whisper — site styles. Colors mirror the app's DesignSystem (Colors.xcassets). */
+/* HabitWhisper — site styles. Colors mirror the app's DesignSystem (Colors.xcassets). */
 :root{
   --accent:#EC3013;--accent-text:#C52810;--accent-soft:#FFE0D9;--accent-softer:#FFF2EF;
   --bg:#F3F2F2;--bg-2:#EAE9E9;--card:#FFFFFF;--ink:#201E1D;--muted:#605D5D;--line:rgba(32,30,29,.1);
