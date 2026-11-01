@@ -1,5 +1,303 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Habit Whisper brings habits, tasks, goals and a journal together."><title>Habit Whisper</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="header"><div class="wrap"><a class="brand" href="./">Habit <span>Whisper</span></a><nav aria-label="Navigation"><a href="support/">Support</a><a href="privacy/">Privacy</a></nav></div></header>
-<main class="wrap"><section class="hero"><div class="eyebrow">A little progress, every day</div><h1>Make room for what matters.</h1><p class="lead">Habit Whisper brings your habits, tasks, goals and journal together, so you can find a rhythm that works for you.</p><a class="button" href="support/">Get support</a><a class="button secondary" href="privacy/">Privacy policy</a></section><section class="grid" aria-label="About the app"><article class="card"><h2>Build your rhythm</h2><p>Track habits and tasks and see your progress over time.</p></article><article class="card"><h2>Pause and reflect</h2><p>Keep a journal, review your week and make space to focus.</p></article><article class="card"><h2>Your data, your devices</h2><p>Your information stays on your devices and can sync through your private iCloud account.</p></article></section></main>
-<footer class="footer"><div class="wrap"><span>© 2026 Habit Whisper</span><nav aria-label="Footer"><a href="support/">Support</a><a href="privacy/">Privacy policy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of use</a></nav></div></footer></body></html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habit Whisper — habits, tasks, goals and a journal</title>
+<meta name="description" content="Habit Whisper brings habits, tasks, goals, a focus timer and a journal together in one calm iPhone app. No ads, no account, your data stays in your iCloud.">
+<meta name="theme-color" content="#F3F2F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181716" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Habit Whisper">
+<meta property="og:description" content="A calm daily rhythm: habits, tasks, goals, focus and a journal in one iPhone app.">
+<meta property="og:image" content="assets/icon.png">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<script>
+// Apply saved theme and language before paint to avoid a flash.
+(function(){try{var t=localStorage.getItem('hw-theme');if(t)document.documentElement.dataset.theme=t;var l=localStorage.getItem('hw-lang')||((navigator.language||'').toLowerCase().indexOf('ru')===0||(navigator.language||'').toLowerCase().indexOf('be')===0?'ru':'en');document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}})();
+</script>
+</head>
+<body>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="30" height="30">Habit Whisper</a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#features"><span data-l="en">Features</span><span data-l="ru">Возможности</span></a>
+      <a href="#pricing"><span data-l="en">Pro</span><span data-l="ru">Pro</span></a>
+      <a href="#faq"><span data-l="en">FAQ</span><span data-l="ru">Вопросы</span></a>
+      <a href="support/"><span data-l="en">Support</span><span data-l="ru">Поддержка</span></a>
+    </nav>
+    <div class="tools">
+      <button class="chip-btn lang-btn" type="button" aria-label="Switch language"><span data-l="en">RU</span><span data-l="ru">EN</span></button>
+      <button class="chip-btn theme-btn" type="button" aria-label="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow reveal"><span data-l="en">A little progress, every day</span><span data-l="ru">Немного прогресса каждый день</span></div>
+      <h1 class="reveal d1" style="margin-top:20px">
+        <span data-l="en"><span class="line">A calm rhythm</span><span class="line">for your <span class="accent">day.</span></span></span>
+        <span data-l="ru"><span class="line">Спокойный ритм</span><span class="line">вашего <span class="accent">дня.</span></span></span>
+      </h1>
+      <p class="lead reveal d2">
+        <span data-l="en">Habits, tasks, goals, a focus timer and a journal in one quiet iPhone app. No streak guilt, no ads, no sign-up.</span>
+        <span data-l="ru">Привычки, задачи, цели, фокус-таймер и дневник в одном спокойном приложении для iPhone. Без чувства вины за пропуски, без рекламы и регистрации.</span>
+      </p>
+      <div class="ctas reveal d3">
+        <a class="button" href="#pricing">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+          <span><small data-l="en">Coming soon to the</small><small data-l="ru">Скоро в</small>App Store</span>
+        </a>
+        <a class="button ghost" href="#features"><span data-l="en">See how it works</span><span data-l="ru">Как это работает</span></a>
+      </div>
+      <div class="facts reveal d3">
+        <span data-l="en">iPhone &amp; iPhone Duo</span><span data-l="ru">iPhone и iPhone Duo</span>
+        <span data-l="en">Private iCloud sync</span><span data-l="ru">Синхронизация через iCloud</span>
+        <span data-l="en">Widgets &amp; Live Activities</span><span data-l="ru">Виджеты и Live Activity</span>
+      </div>
+    </div>
+
+    <div class="stage reveal d2" aria-hidden="true">
+      <div class="phone back"><img data-shot="progress" src="assets/screens/en/progress.webp" alt="" width="600" height="1304"></div>
+      <div class="phone main"><img data-shot="today" src="assets/screens/en/today.webp" alt="" width="600" height="1304" fetchpriority="high"></div>
+      <div class="bubble b1">
+        <svg class="ring" viewBox="0 0 40 40"><circle class="track" cx="20" cy="20" r="16" pathLength="100"/><circle class="val" cx="20" cy="20" r="16" pathLength="100" style="--to:33"/></svg>
+        <div><span data-l="en">4 of 6 habits</span><span data-l="ru">4 из 6 привычек</span><small data-l="en">Today</small><small data-l="ru">Сегодня</small></div>
+      </div>
+      <div class="bubble b2">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5" pathLength="24"/></svg></div>
+        <div><span data-l="en">Back stretch</span><span data-l="ru">Разминка для спины</span><small data-l="en">14-day streak</small><small data-l="ru">серия 14 дней</small></div>
+      </div>
+      <div class="bubble b3">
+        <div class="mini-bars"><i style="--h:35%"></i><i style="--h:60%"></i><i style="--h:45%"></i><i style="--h:80%"></i><i style="--h:100%"></i></div>
+        <div>85%<small data-l="en">of plan this month</small><small data-l="ru">плана за месяц</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span data-l="en"><b>●</b>Morning, day &amp; evening<b>●</b>Counters &amp; timers<b>●</b>Subtasks &amp; projects<b>●</b>Linked goals<b>●</b>Mood journal<b>●</b>Weekly review<b>●</b>Focus sessions<b>●</b>Apple Health<b>●</b>Interactive widgets<b>●</b>Morning, day &amp; evening<b>●</b>Counters &amp; timers<b>●</b>Subtasks &amp; projects<b>●</b>Linked goals<b>●</b>Mood journal<b>●</b>Weekly review<b>●</b>Focus sessions<b>●</b>Apple Health<b>●</b>Interactive widgets</span>
+      <span data-l="ru"><b>●</b>Утро, день и вечер<b>●</b>Счётчики и таймеры<b>●</b>Подзадачи и проекты<b>●</b>Связанные цели<b>●</b>Дневник настроения<b>●</b>Итог недели<b>●</b>Фокус-сессии<b>●</b>Apple Health<b>●</b>Интерактивные виджеты<b>●</b>Утро, день и вечер<b>●</b>Счётчики и таймеры<b>●</b>Подзадачи и проекты<b>●</b>Связанные цели<b>●</b>Дневник настроения<b>●</b>Итог недели<b>●</b>Фокус-сессии<b>●</b>Apple Health<b>●</b>Интерактивные виджеты</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">One quiet workspace</span><span data-l="ru">Всё в одном месте</span></div>
+      <h2><span data-l="en">Everything your day needs. Nothing it doesn’t.</span><span data-l="ru">Всё, что нужно дню. И ничего лишнего.</span></h2>
+    </div>
+
+    <div class="story">
+      <div class="sticky" aria-hidden="true">
+        <div class="phone">
+          <img class="on" data-shot="today" data-step="0" src="assets/screens/en/today.webp" alt="" width="600" height="1304">
+          <img data-shot="tasks" data-step="1" src="assets/screens/en/tasks.webp" alt="" width="600" height="1304" loading="lazy">
+          <img data-shot="progress" data-step="2" src="assets/screens/en/progress.webp" alt="" width="600" height="1304" loading="lazy">
+          <img data-shot="journal" data-step="3" src="assets/screens/en/journal.webp" alt="" width="600" height="1304" loading="lazy">
+          <img data-shot="focus" data-step="4" src="assets/screens/en/focus.webp" alt="" width="600" height="1304" loading="lazy">
+        </div>
+      </div>
+      <div class="steps">
+        <article class="step on" data-step="0">
+          <div class="num">01 · <span data-l="en">TODAY</span><span data-l="ru">СЕГОДНЯ</span></div>
+          <h3><span data-l="en">Your day at a glance</span><span data-l="ru">Весь день одним взглядом</span></h3>
+          <p><span data-l="en">Habits sit in Morning, Day and Evening, so you always know what’s next. Tap to check in, count glasses of water or start a timer right from the list.</span><span data-l="ru">Привычки разложены на Утро, День и Вечер, поэтому всегда понятно, что дальше. Отметка в одно касание, счётчик воды или страниц, таймер прямо из списка.</span></p>
+          <ul><li data-l="en">Check-ins</li><li data-l="en">Counters</li><li data-l="en">Timers</li><li data-l="ru">Отметки</li><li data-l="ru">Счётчики</li><li data-l="ru">Таймеры</li></ul>
+          <div class="phone inline-shot"><img data-shot="today" src="assets/screens/en/today.webp" alt="Today screen" width="600" height="1304" loading="lazy"></div>
+        </article>
+        <article class="step" data-step="1">
+          <div class="num">02 · <span data-l="en">TASKS</span><span data-l="ru">ЗАДАЧИ</span></div>
+          <h3><span data-l="en">Tasks right next to habits</span><span data-l="ru">Задачи рядом с привычками</span></h3>
+          <p><span data-l="en">One-off and recurring tasks with subtasks and projects. Move anything to tomorrow in a swipe, without leaving your routine.</span><span data-l="ru">Разовые и повторяющиеся задачи с подзадачами и проектами. Перенести на завтра можно одним жестом, не выходя из своего ритма.</span></p>
+          <ul><li data-l="en">Subtasks</li><li data-l="en">Projects</li><li data-l="en">Recurring</li><li data-l="ru">Подзадачи</li><li data-l="ru">Проекты</li><li data-l="ru">Повторы</li></ul>
+          <div class="phone inline-shot"><img data-shot="tasks" src="assets/screens/en/tasks.webp" alt="Tasks screen" width="600" height="1304" loading="lazy"></div>
+        </article>
+        <article class="step" data-step="2">
+          <div class="num">03 · <span data-l="en">PROGRESS</span><span data-l="ru">ПРОГРЕСС</span></div>
+          <h3><span data-l="en">See your real pace</span><span data-l="ru">Видно реальный темп</span></h3>
+          <p><span data-l="en">A monthly heat map, trend cards and goals linked to your habits and tasks by tag or project. Progress you can actually feel.</span><span data-l="ru">Тепловая карта месяца, карточки динамики и цели, связанные с привычками и задачами по тегу или проекту. Прогресс, который ощущается.</span></p>
+          <ul><li data-l="en">Heat map</li><li data-l="en">Measurable goals</li><li data-l="ru">Тепловая карта</li><li data-l="ru">Измеримые цели</li></ul>
+          <div class="phone inline-shot"><img data-shot="progress" src="assets/screens/en/progress.webp" alt="Progress screen" width="600" height="1304" loading="lazy"></div>
+        </article>
+        <article class="step" data-step="3">
+          <div class="num">04 · <span data-l="en">JOURNAL</span><span data-l="ru">ДНЕВНИК</span></div>
+          <h3><span data-l="en">Pause and reflect</span><span data-l="ru">Остановиться и подумать</span></h3>
+          <p><span data-l="en">Rate your day from 1 to 5, answer a question of the day and turn the week’s insights into one concrete next step.</span><span data-l="ru">Оцените день от 1 до 5, ответьте на вопрос дня и превратите выводы недели в один конкретный следующий шаг.</span></p>
+          <ul><li data-l="en">Mood</li><li data-l="en">Daily prompts</li><li data-l="en">Weekly review</li><li data-l="ru">Настроение</li><li data-l="ru">Вопрос дня</li><li data-l="ru">Итог недели</li></ul>
+          <div class="phone inline-shot"><img data-shot="journal" src="assets/screens/en/journal.webp" alt="Journal screen" width="600" height="1304" loading="lazy"></div>
+        </article>
+        <article class="step" data-step="4">
+          <div class="num">05 · <span data-l="en">WIDGETS &amp; FOCUS</span><span data-l="ru">ВИДЖЕТЫ И ФОКУС</span></div>
+          <h3><span data-l="en">Always one glance away</span><span data-l="ru">Всегда под рукой</span></h3>
+          <p><span data-l="en">Interactive Home and Lock Screen widgets, plus focus sessions that live on the Lock Screen and in the Dynamic Island.</span><span data-l="ru">Интерактивные виджеты на экране «Домой» и блокировки, а фокус-сессии видны на экране блокировки и в Dynamic Island.</span></p>
+          <ul><li data-l="en">Widgets</li><li data-l="en">Live Activity</li><li data-l="en">Dynamic Island</li><li data-l="ru">Виджеты</li><li data-l="ru">Live Activity</li><li data-l="ru">Dynamic Island</li></ul>
+          <div class="phone inline-shot"><img data-shot="focus" src="assets/screens/en/focus.webp" alt="Widgets screen" width="600" height="1304" loading="lazy"></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">Thoughtful details</span><span data-l="ru">Детали</span></div>
+      <h2><span data-l="en">Built for real life, not perfect streaks.</span><span data-l="ru">Для реальной жизни, а не для идеальных серий.</span></h2>
+    </div>
+    <div class="bento">
+      <div class="tile feature t-a reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V6M16 20v-8M22 20H2"/></svg></div>
+        <h3><span data-l="en">Honest progress</span><span data-l="ru">Честный прогресс</span></h3>
+        <p><span data-l="en">A missed day is just a day. The app shows your pace over weeks and months, not a broken chain.</span><span data-l="ru">Пропущенный день это просто день. Приложение показывает темп за недели и месяцы, а не «порванную цепочку».</span></p>
+        <div class="heat" id="heat" aria-hidden="true"></div>
+      </div>
+      <div class="tile t-b reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6.6 5.3 5.3 0 0 1 21.3 12C19 16.6 12 21 12 21z"/></svg></div>
+        <h3><span data-l="en">Apple Health auto-check</span><span data-l="ru">Автоотметка из Apple Health</span></h3>
+        <p><span data-l="en">If you choose, steps, sleep, workouts and mindful minutes complete linked habits for you, processed on device.</span><span data-l="ru">По вашему выбору шаги, сон, тренировки и минуты осознанности сами закрывают связанные привычки. Всё обрабатывается на устройстве.</span></p>
+      </div>
+      <div class="tile t-c reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="9" height="16" rx="2"/><rect x="13" y="4" width="9" height="16" rx="2"/></svg></div>
+        <h3><span data-l="en">iPhone Duo ready</span><span data-l="ru">Готово для iPhone Duo</span></h3>
+        <p><span data-l="en">Two-column layouts on the unfolded inner display.</span><span data-l="ru">Две колонки на раскрытом внутреннем экране.</span></p>
+      </div>
+      <div class="tile t-d reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
+        <h3><span data-l="en">Focus timer</span><span data-l="ru">Фокус-таймер</span></h3>
+        <p><span data-l="en">Timed sessions that keep running on the Lock Screen.</span><span data-l="ru">Сессии концентрации, которые видны на экране блокировки.</span></p>
+      </div>
+      <div class="tile t-e reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18M3 12h18"/></svg></div>
+        <h3><span data-l="en">English &amp; Russian</span><span data-l="ru">Русский и английский</span></h3>
+        <p><span data-l="en">Fully localized, with light and dark appearance.</span><span data-l="ru">Полная локализация, светлая и тёмная тема.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:10px">
+  <div class="wrap">
+    <div class="privacy-band reveal">
+      <div>
+        <div class="eyebrow"><span data-l="en">Private by design</span><span data-l="ru">Приватность по умолчанию</span></div>
+        <h2 style="margin-top:16px"><span data-l="en">Your data stays yours.</span><span data-l="ru">Ваши данные остаются вашими.</span></h2>
+        <p><span data-l="en">Habits, tasks, goals and journal entries live on your device and sync only through your private iCloud. We don’t see them.</span><span data-l="ru">Привычки, задачи, цели и записи дневника хранятся на устройстве и синхронизируются только через ваш личный iCloud. Мы их не видим.</span></p>
+        <p style="margin-top:14px"><a href="privacy/" style="color:var(--accent)"><span data-l="en">Read the privacy policy →</span><span data-l="ru">Политика конфиденциальности →</span></a></p>
+      </div>
+      <ul>
+        <li><b>0</b><span data-l="en">ads</span><span data-l="ru">рекламы</span></li>
+        <li><b>0</b><span data-l="en">accounts to create</span><span data-l="ru">регистраций</span></li>
+        <li><b>0</b><span data-l="en">trackers</span><span data-l="ru">трекеров</span></li>
+        <li><b>iCloud</b><span data-l="en">private sync</span><span data-l="ru">личная синхронизация</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">Free &amp; Pro</span><span data-l="ru">Бесплатно и Pro</span></div>
+      <h2><span data-l="en">Start free. Grow when you need more room.</span><span data-l="ru">Начните бесплатно. Расширьтесь, когда станет тесно.</span></h2>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <h3><span data-l="en">Free</span><span data-l="ru">Бесплатно</span></h3>
+        <div class="price"><span data-l="en">Forever, no account</span><span data-l="ru">Навсегда, без регистрации</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Up to 5 habits and 2 goals</span><span data-l="ru">До 5 привычек и 2 целей</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Unlimited tasks and subtasks</span><span data-l="ru">Задачи и подзадачи без ограничений</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Journal and weekly review</span><span data-l="ru">Дневник и итог недели</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Focus timer, widgets, iCloud sync</span><span data-l="ru">Фокус-таймер, виджеты, синхронизация iCloud</span></li>
+        </ul>
+      </div>
+      <div class="plan pro reveal d1">
+        <div class="badge">PRO</div>
+        <h3>Habit Whisper Pro</h3>
+        <div class="price"><span data-l="en">More room for your plans</span><span data-l="ru">Больше места для ваших планов</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Everything in Free</span><span data-l="ru">Всё из бесплатного плана</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en"><b>Unlimited</b> habits and goals</span><span data-l="ru">Привычки и цели <b>без лимита</b></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Additional icons and colors</span><span data-l="ru">Дополнительные значки и цвета</span></li>
+        </ul>
+        <div class="options">
+          <span><span data-l="en">Yearly</span><span data-l="ru">На год</span><small data-l="en">7 days free to start</small><small data-l="ru">первые 7 дней бесплатно</small></span>
+          <span><span data-l="en">Lifetime</span><span data-l="ru">Навсегда</span><small data-l="en">one-time purchase</small><small data-l="ru">разовая покупка</small></span>
+        </div>
+      </div>
+    </div>
+    <p class="fineprint reveal">
+      <span data-l="en">Prices are shown in the app in your local currency before purchase. The free trial is for new subscribers where available. Subscriptions renew automatically and can be cancelled in your Apple Account settings.</span>
+      <span data-l="ru">Цена показывается в приложении в вашей валюте до покупки. Пробный период доступен новым подписчикам, если он предлагается. Подписка продлевается автоматически, отменить её можно в настройках Apple Account.</span>
+    </p>
+  </div>
+</section>
+
+<section class="section" id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">Questions</span><span data-l="ru">Вопросы</span></div>
+      <h2><span data-l="en">Good to know</span><span data-l="ru">Полезно знать</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary><span data-l="en">Do I need an account?</span><span data-l="ru">Нужна ли регистрация?</span></summary>
+        <p><span data-l="en">No. Open the app and start. If iCloud is on, your data syncs across your devices automatically.</span><span data-l="ru">Нет. Откройте приложение и начните. Если включён iCloud, данные сами синхронизируются между устройствами.</span></p>
+      </details>
+      <details>
+        <summary><span data-l="en">What happens if I miss a day?</span><span data-l="ru">Что если я пропущу день?</span></summary>
+        <p><span data-l="en">Nothing dramatic. Habit Whisper focuses on your pace over weeks and months, so one off day doesn’t erase your progress.</span><span data-l="ru">Ничего страшного. Habit Whisper смотрит на темп за недели и месяцы, поэтому один пропуск не перечёркивает прогресс.</span></p>
+      </details>
+      <details>
+        <summary><span data-l="en">Which devices are supported?</span><span data-l="ru">Какие устройства поддерживаются?</span></summary>
+        <p><span data-l="en">iPhone and iPhone Duo with iOS 27, including Home and Lock Screen widgets and Live Activities.</span><span data-l="ru">iPhone и iPhone Duo с iOS 27, включая виджеты на экране «Домой» и блокировки и Live Activity.</span></p>
+      </details>
+      <details>
+        <summary><span data-l="en">How do I restore a purchase?</span><span data-l="ru">Как восстановить покупку?</span></summary>
+        <p><span data-l="en">Open Pro in the app and tap Restore. Purchases are managed by Apple and tied to your Apple Account.</span><span data-l="ru">Откройте Pro в приложении и нажмите «Восстановить». Покупками управляет Apple, они привязаны к вашему Apple Account.</span></p>
+      </details>
+      <details>
+        <summary><span data-l="en">How do I contact you?</span><span data-l="ru">Как с вами связаться?</span></summary>
+        <p><span data-l="en">Email</span><span data-l="ru">Пишите на</span> <a href="mailto:support@finik.app">support@finik.app</a>. <a href="support/"><span data-l="en">More on the support page.</span><span data-l="ru">Подробнее на странице поддержки.</span></a></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <img src="assets/icon.png" alt="Habit Whisper icon" width="96" height="96" loading="lazy">
+    <h2><span data-l="en">Make room for what matters.</span><span data-l="ru">Освободите место для главного.</span></h2>
+    <p><span data-l="en">Habit Whisper is coming to the App Store for iPhone.</span><span data-l="ru">Habit Whisper скоро появится в App Store для iPhone.</span></p>
+    <a class="button accent-btn" href="support/"><span data-l="en">Questions? Get in touch</span><span data-l="ru">Есть вопросы? Напишите нам</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 Habit Whisper</span>
+    <nav aria-label="Footer">
+      <a href="support/"><span data-l="en">Support</span><span data-l="ru">Поддержка</span></a>
+      <a href="privacy/"><span data-l="en">Privacy policy</span><span data-l="ru">Конфиденциальность</span></a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span data-l="en">Terms of use</span><span data-l="ru">Условия использования</span></a>
+    </nav>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
