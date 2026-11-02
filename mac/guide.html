@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Установка HabitWhisper на Mac, синхронизация с iPhone и подключение Codex и Claude Code.">
+<title>HabitWhisper на Mac — инструкция / Mac guide</title>
+<style>
+:root{color-scheme:light;--ink:#26332f;--muted:#66736b;--paper:#faf9f5;--accent:#3e6e59;--line:#e1e7df;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);line-height:1.7}main,header,footer{max-width:850px;margin:auto;padding:24px}header,footer{border-bottom:1px solid var(--line)}footer{border-top:1px solid var(--line);border-bottom:0;margin-top:48px}a{color:var(--accent);text-underline-offset:.2em}nav{display:flex;gap:20px;flex-wrap:wrap}h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.15;letter-spacing:-.04em}h2{margin-top:2.5rem;line-height:1.3}h3{margin-top:1.8rem}p,li{overflow-wrap:anywhere}li+li{margin-top:.5rem}.lead{font-size:1.2rem}.note{padding:16px 20px;background:#edf2ec;border-left:4px solid var(--accent);border-radius:4px}pre{padding:18px;background:#edf2ec;border:1px solid var(--line);border-radius:10px;overflow:auto;font-size:.9rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}table{border-collapse:collapse;width:100%;font-size:.94rem}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:12px 8px}.table-wrap{overflow-x:auto}.meta{color:var(--muted);font-size:.9rem}.language{border-top:2px solid var(--line);margin-top:64px;padding-top:24px}section{scroll-margin-top:20px}@media print{body{background:white}header nav{display:none}pre{white-space:pre-wrap}h2,h3{break-after:avoid}tr{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><nav aria-label="Навигация"><a href="https://dvoineu.github.io/habit-whisper-site/">HabitWhisper</a><a href="#ru">Русский</a><a href="#en" lang="en">English</a><a href="https://dvoineu.github.io/habit-whisper-site/support/">Поддержка / Support</a></nav></header>
+<main>
+<section id="ru">
+<h1>HabitWhisper на Mac</h1>
+<p class="lead">Подключите Codex или Claude Code к задачам, привычкам и целям HabitWhisper. Компаньон работает в строке меню Mac; данные с iPhone получает через ваш iCloud.</p>
+<p class="meta">Инструкция для распространяемой Production-версии · macOS 26 и новее · Mac с Apple Silicon (M1 и новее).</p>
+<div class="note"><strong>Перед началом.</strong> Нужны HabitWhisper на iPhone, один аккаунт Apple для iCloud на обоих устройствах и установленный на этом Mac клиент Codex или Claude Code. Xcode, исходный код и отдельный аккаунт HabitWhisper для установки не нужны. Development-сборки с тестовой средой iCloud используют другое облачное окружение.</div>
+<h2>Содержание</h2>
+<nav aria-label="Содержание"><a href="#install">Установка</a><a href="#first-launch">Первый запуск</a><a href="#codex">Codex</a><a href="#claude">Claude Code</a><a href="#use">Использование</a><a href="#sync">iCloud</a><a href="#controls">Настройки</a><a href="#privacy">Доступ к данным</a><a href="#update">Обновление и удаление</a><a href="#help">Решение проблем</a></nav>
+<section id="install">
+<h2>1. Установите приложение</h2>
+<ol>
+<li>На <a href="https://dvoineu.github.io/habit-whisper-site/mac/">странице HabitWhisper для Mac</a> скачайте DMG. Если эта инструкция открыта с установочного диска, приложение уже находится рядом с ней.</li>
+<li>Откройте DMG и перетащите <strong>HabitWhisper.app</strong> в <strong>Applications / Программы</strong>. Дождитесь завершения копирования.</li>
+<li>Извлеките установочный диск через Finder. Откройте <strong>Программы → HabitWhisper</strong> именно в Finder, не с установочного диска и не через среду разработки.</li>
+<li>Если macOS попросит подтвердить первый запуск скачанного приложения, выберите <strong>Открыть</strong>. Если система сообщает о повреждении или не может проверить разработчика, повторно скачайте файл с официальной страницы или обратитесь в поддержку.</li>
+</ol>
+<p>Вариант с ZIP: распакуйте архив двойным щелчком в Finder, перенесите <strong>HabitWhisper.app</strong> в <strong>Программы</strong> и запустите оттуда. Устанавливать оба варианта не нужно.</p>
+<p>Для проверки файла опытные пользователи могут скачать <code>SHA256SUMS.txt</code> с той же страницы и сравнить SHA-256 скачанного DMG или ZIP командой <code>shasum -a 256 &lt;путь-к-файлу&gt;</code>.</p>
+</section>
+<section id="first-launch">
+<h2>2. Найдите значок и дождитесь данных</h2>
+<ol>
+<li>Найдите значок <strong>листа в строке меню</strong> вверху экрана и нажмите его. У приложения нет главного окна или постоянного значка в Dock — это обычное поведение компаньона.</li>
+<li>Убедитесь, что Mac и iPhone вошли в один аккаунт Apple для iCloud. Откройте HabitWhisper на iPhone, подключите оба устройства к интернету и дайте iCloud время на передачу данных.</li>
+<li>В меню Mac проверьте <strong>«Последнее получение из iCloud»</strong>, количество задач и привычек на сегодня. Статус <strong>«Работает»</strong> означает, что локальный сервер готов принимать запросы; ожидаемые изменения с iPhone проверяйте отдельно.</li>
+<li>Оставьте <strong>«MCP-сервер»</strong> включённым. Для первого подключения выключите <strong>«Разрешить изменения»</strong>: агент сможет читать данные, а команды записи не будут доступны.</li>
+</ol>
+<p>Не запускайте одновременно Development-копию и скачанную Production-копию. Если видны два значка листа, завершите старую копию через её меню. Адрес подключения обычно <code>http://127.0.0.1:8765/mcp</code>; используйте точный адрес, показанный в вашем меню.</p>
+</section>
+<section id="codex">
+<h2>3. Подключите Codex</h2>
+<p>Подключение предназначено для локального клиента на том же Mac. Облачная задача или клиент на другом устройстве не получит доступ к адресу <code>127.0.0.1</code>.</p>
+<ol>
+<li>В меню HabitWhisper нажмите <strong>«Конфиг для Codex»</strong>. В буфер обмена попадёт блок с адресом и вашим секретным токеном.</li>
+<li>Откройте личный файл <code>~/.codex/config.toml</code> в текстовом редакторе. Символ <code>~</code> означает вашу домашнюю папку. Если каталога или файла ещё нет, создайте их. Сохраните существующие настройки.</li>
+<li>Добавьте скопированный блок один раз. Если раздел <code>[mcp_servers.habitwhisper]</code> уже есть, замените только его параметры; не добавляйте второй раздел с тем же именем. Пример ниже показывает форму, а не рабочий токен.</li>
+</ol>
+<pre><code>[mcp_servers.habitwhisper]
+url = "http://127.0.0.1:8765/mcp"
+http_headers = { Authorization = "Bearer &lt;ваш-токен-из-меню&gt;" }</code></pre>
+<ol start="4">
+<li>Сохраните файл и откройте новый локальный чат или перезапустите клиент, чтобы он перечитал конфигурацию. Для CLI можно проверить регистрацию командой <code>codex mcp list</code>; наличие записи ещё не подтверждает успешное чтение данных.</li>
+<li>Напишите: <strong>«Используй habitwhisper. Покажи задачи и привычки на сегодня. Ничего не меняй. Укажи часовой пояс и время последнего получения из iCloud».</strong> Сверьте ответ с iPhone.</li>
+</ol>
+<p>Если используете другой каталог конфигурации Codex, измените файл активного профиля. Не сохраняйте токен в файле проекта, репозитории или общей папке.</p>
+</section>
+<section id="claude">
+<h2>4. Подключите Claude Code</h2>
+<ol>
+<li>В меню HabitWhisper нажмите <strong>«Команда для Claude Code»</strong>.</li>
+<li>Откройте Terminal в каталоге, где собираетесь работать с Claude Code, и выполните скопированную команду. Она регистрирует сервер <code>habitwhisper</code> с токеном. Пример формы:</li>
+</ol>
+<pre><code>claude mcp add --transport http habitwhisper http://127.0.0.1:8765/mcp --header "Authorization: Bearer &lt;ваш-токен-из-меню&gt;"</code></pre>
+<ol start="3">
+<li>Проверьте регистрацию командой <code>claude mcp list</code> и откройте новую сессию Claude Code в этом же каталоге.</li>
+<li>Если клиент просит разрешить подключение или использование инструментов, проверьте имя <code>habitwhisper</code> и локальный адрес, затем разрешите нужные операции.</li>
+<li>Попросите показать сегодняшний план без изменений и сравните ответ с iPhone.</li>
+</ol>
+<p>Скопированная команда использует стандартную область настройки Claude Code для текущего проекта. Чтобы подключение действовало для вашего пользователя во всех проектах, добавьте к ней <code>--scope user</code>. Если клиент сообщает, что имя уже занято, удалите старую регистрацию через <code>claude mcp remove habitwhisper</code> в соответствующей области и выполните новую команду.</p>
+</section>
+<section id="use">
+<h2>5. Используйте помощника</h2>
+<h3>Начните с чтения</h3>
+<ul>
+<li>«Что у меня сегодня? Покажи задачи и привычки, ничего не меняй».</li>
+<li>«Найди незавершённые задачи на эту неделю».</li>
+<li>«Покажи мои цели и связанные с ними привычки».</li>
+<li>«Как прошла эта неделя? Покажи факты и время последнего получения данных».</li>
+<li>«Предложи порядок дел на завтра. Сначала только предложение, без изменений».</li>
+</ul>
+<p>План и объяснения формирует выбранный вами агент по доступным данным. Компаньон сам не содержит модель и не запускает отдельного помощника.</p>
+<h3>Разрешите запись, когда будете готовы</h3>
+<ol>
+<li>Включите <strong>«Разрешить изменения»</strong> в меню HabitWhisper.</li>
+<li>Откройте новый чат клиента, чтобы он заново прочитал доступные инструменты.</li>
+<li>Начните с отдельной задачи: «Создай задачу “Проверка Mac-компаньона” на завтра в 10:00».</li>
+<li>Проверьте название и срок в ответе, затем дождитесь появления задачи на iPhone.</li>
+<li>Попробуйте перенести эту задачу и отметить выполненной. Удаление попросите отдельно и подтвердите в клиенте.</li>
+</ol>
+<p>Доступны чтение и изменение задач, подзадач, привычек, отметок и целей; также сводки и статистика. Для неоднозначного названия назовите точный объект и дату. Архивирование привычки сохраняет её прошлые отметки. Запросы удаления и архивирования формулируйте явно; не отключайте подтверждения клиента для таких операций.</p>
+<p>После работы можно снова выключить <strong>«Разрешить изменения»</strong>. Это блокирует запись на сервере, включая запросы из уже открытого чата.</p>
+</section>
+<section id="sync">
+<h2>6. Как работает синхронизация</h2>
+<p>Компаньон читает и сохраняет данные на Mac, а iCloud передаёт их между устройствами. Доставка занимает время и не гарантирована мгновенно. Для синхронизации нужны доступный iCloud, интернет и одинаковое облачное окружение на обоих устройствах.</p>
+<ul>
+<li><strong>«Последнее получение из iCloud»</strong> — время последнего подтверждённого импорта на Mac. В ответах MCP оно называется <code>asOf</code>. Это не время последней локальной записи и не подтверждение, что iPhone уже получил изменения с Mac.</li>
+<li><strong>«Ожидание данных из iCloud»</strong> означает, что подтверждённый импорт пока не зарегистрирован. Пустая сводка в этот момент не доказывает, что все данные отсутствуют.</li>
+<li><strong>«Обновить сводку»</strong> перечитывает уже доступную на Mac историю. Кнопка не заставляет iCloud немедленно скачать данные.</li>
+<li>Если новых правок давно не было, старое время импорта само по себе не означает ошибку. Если ждёте конкретную правку, проверьте именно её на втором устройстве.</li>
+</ul>
+<p>При проблеме не удаляйте хранилище и не повторяйте многократно команду создания задачи: сначала проверьте, не была ли она уже создана.</p>
+</section>
+<section id="controls">
+<h2>7. Настройки в меню Mac</h2>
+<div class="table-wrap"><table><thead><tr><th>Элемент</th><th>Что делает</th></tr></thead><tbody>
+<tr><td>Работает / Остановлен / Нет доступа к iCloud</td><td>Показывает состояние компаньона. «Работает» не гарантирует свежесть всех облачных данных.</td></tr>
+<tr><td>MCP-сервер</td><td>Включает или останавливает локальный доступ агентов. Выключение сервера само по себе не выключает iCloud-синхронизацию запущенного приложения.</td></tr>
+<tr><td>Разрешить изменения</td><td>Разрешает агентам запись. При выключении остаются инструменты чтения.</td></tr>
+<tr><td>Конфиг для Codex / Команда для Claude Code</td><td>Копирует настройки текущего подключения, включая секретный токен.</td></tr>
+<tr><td>Новый токен</td><td>После подтверждения заменяет секрет. Старые настройки клиентов перестают работать; заново скопируйте подключение во все используемые клиенты.</td></tr>
+<tr><td>Последние действия</td><td>Показывает недавние записи агента. Это не полный список прочитанных данных и не квитанция доставки на iPhone.</td></tr>
+<tr><td>Запускать при входе</td><td>Запускает установленную копию после входа в macOS. Если система просит разрешение, проверьте Системные настройки → Основные → Объекты входа и расширения.</td></tr>
+<tr><td>Завершить HabitWhisper</td><td>Закрывает компаньон и локальный сервер. Пока он закрыт или Mac спит, агент не сможет получить к нему доступ.</td></tr>
+</tbody></table></div>
+</section>
+<section id="privacy">
+<h2>8. Доступ к данным и токен</h2>
+<p>Сервер слушает только <code>127.0.0.1</code> и требует токен. Открывать порт в роутере или подключать туннель не нужно. Дневник и личные ответы недельной рефлексии через MCP не предоставляются; произвольного доступа к файлам, SQL и Terminal сервер не даёт.</p>
+<p>Когда вы подключаете клиента, выбранный агент получает запрошенные данные задач, привычек и целей. Его провайдер может обрабатывать их на своих серверах согласно вашим настройкам и его политике. Локальный адрес компаньона не означает, что модель работает локально. До подключения ознакомьтесь с условиями выбранного клиента и <a href="https://dvoineu.github.io/habit-whisper-site/privacy/#ru">политикой HabitWhisper</a>.</p>
+<p>Токен хранится в Связке ключей macOS; скопированные настройки содержат его текст. Не отправляйте их в чат, поддержку или репозиторий. Команда Claude Code также может сохраниться в истории Terminal. При раскрытии токена нажмите <strong>«Новый токен»</strong>, подтвердите замену и обновите настройки клиентов. Для немедленной остановки доступа выключите <strong>«MCP-сервер»</strong>.</p>
+</section>
+<section id="update">
+<h2>9. Обновление и удаление</h2>
+<h3>Обновление</h3>
+<ol>
+<li>Скачайте новую версию с официальной страницы. Завершите текущую через <strong>«Завершить HabitWhisper»</strong>.</li>
+<li>Замените приложение в той же папке <strong>Программы</strong> и откройте его в Finder. Не удаляйте контейнер данных или записи Связки ключей.</li>
+<li>Проверьте статус, данные и автозапуск. Если ранее использовалась копия в другой папке, выключите автозапуск старой копии перед переносом.</li>
+<li>Откройте новый чат агента для обновления каталога инструментов. При прежнем токене и адресе повторная настройка обычно не требуется.</li>
+</ol>
+<p>В текущей версии нет встроенного автоматического обновления.</p>
+<h3>Отключение и удаление</h3>
+<ol>
+<li>Выключите <strong>«Разрешить изменения»</strong> и <strong>«Запускать при входе»</strong>, затем завершите HabitWhisper.</li>
+<li>Для Codex удалите только раздел <code>[mcp_servers.habitwhisper]</code> из активного личного конфига. Для Claude Code выполните <code>claude mcp remove habitwhisper</code> в той области, где добавляли сервер; для пользовательской настройки — <code>claude mcp remove --scope user habitwhisper</code>.</li>
+<li>Переместите <strong>HabitWhisper.app</strong> из Программ в Корзину. Это не является командой удаления ваших задач, привычек и целей из iCloud. Локальные данные и токен могут остаться на Mac; полное удаление личных данных обсуждайте с поддержкой отдельно.</li>
+</ol>
+</section>
+<section id="help">
+<h2>10. Если что-то не работает</h2>
+<div class="table-wrap"><table><thead><tr><th>Симптом</th><th>Действия</th></tr></thead><tbody>
+<tr><td>Нет окна и значка в Dock</td><td>Найдите лист в верхней строке меню. Проверьте скрытые значки и Системные настройки → Строка меню. Запускайте установленную копию через Finder.</td></tr>
+<tr><td>Нет доступа к iCloud</td><td>Прочитайте пояснение в меню, проверьте аккаунт и сеть на обоих устройствах, нажмите «Повторить». Development-версия не подключается к Production-данным.</td></tr>
+<tr><td>Пустые или старые данные</td><td>Откройте iPhone-приложение, проверьте iCloud и сеть, подождите импорта и нажмите «Обновить сводку». Не очищайте базу данных.</td></tr>
+<tr><td>Кнопки копирования недоступны</td><td>Дождитесь открытия iCloud-хранилища и готовности сервера. При ошибке прочитайте пояснение и используйте «Повторить».</td></tr>
+<tr><td>Connection refused / сервер не подключён</td><td>Mac должен бодрствовать, HabitWhisper — работать, «MCP-сервер» — быть включён. Проверьте точный адрес и порт в меню. Клиент должен работать на этом же Mac.</td></tr>
+<tr><td>HTTP 401 / Unauthorized</td><td>Заново скопируйте подключение из меню и замените старый токен в клиенте. Адрес без заголовка Authorization не даёт доступа.</td></tr>
+<tr><td>Чтение работает, изменения запрещены</td><td>Включите «Разрешить изменения» и откройте новый чат. При выключенном переключателе запрет записи ожидаем.</td></tr>
+<tr><td>Unknown tool / инструмент отсутствует</td><td>Проверьте версию компаньона, состояние «Разрешить изменения» и откройте новый чат для обновления каталога MCP.</td></tr>
+<tr><td>Сервер не запускается / два листа</td><td>Завершите старую или вторую копию. Один порт может слушать только один процесс. Затем повторите включение сервера.</td></tr>
+<tr><td>Автозапуск не работает</td><td>Включите «Запускать при входе» у установленной копии и проверьте разрешение в «Объектах входа». Приложение нельзя запускать при входе с извлечённого DMG.</td></tr>
+<tr><td>Изменение видно на Mac, но не на iPhone</td><td>Локальная запись ещё не означает доставку iCloud. Проверьте сеть и аккаунт, откройте приложение на iPhone и дождитесь появления именно этой правки.</td></tr>
+</tbody></table></div>
+<p>Поддержка: <a href="mailto:support@finik.app">support@finik.app</a>. Сообщите модель Mac, версию macOS, версию компаньона и короткий отпечаток из нижней части меню, название и версию клиента, время и шаги проблемы. Не отправляйте токен, полный конфиг, личные названия задач и содержимое дневника.</p>
+</section>
+</section>
+<section id="en" class="language" lang="en">
+<h1>HabitWhisper for Mac</h1>
+<p class="lead">Connect a local Codex or Claude Code client to your HabitWhisper tasks, habits and goals. The companion lives in the Mac menu bar and syncs with your iPhone through your iCloud account.</p>
+<p>Requires macOS 26 or later, an Apple Silicon Mac (M1 or later), HabitWhisper on iPhone, the same Apple Account for iCloud on both devices, and a client installed on this Mac. No Xcode or source code is needed. Production and Development iCloud environments are separate.</p>
+<h2>Install and start</h2>
+<ol><li>Download a DMG from the <a href="https://dvoineu.github.io/habit-whisper-site/mac/">official Mac page</a>, open it and drag <strong>HabitWhisper.app</strong> to <strong>Applications</strong>. If reading this on the mounted disk, the app is beside this guide. Alternatively, unzip the ZIP and move the app to Applications.</li><li>Eject the disk, then launch the installed app from Finder. Confirm the normal first-launch <strong>Open</strong> prompt. If macOS cannot verify the developer or reports damage, download again or contact support.</li><li>Click the <strong>leaf in the menu bar</strong>. There is no main window or permanent Dock icon. Keep only one companion copy running.</li><li>Open HabitWhisper on iPhone, check your network and iCloud account, and wait for the import. <strong>Running</strong> means the local server is ready; check expected iPhone changes separately.</li><li>Keep <strong>MCP server</strong> on and turn <strong>Allow changes</strong> off for your first connection.</li></ol>
+<h2>Connect Codex</h2>
+<ol><li>Click <strong>Codex config</strong> in the companion menu.</li><li>Paste the copied block into your personal <code>~/.codex/config.toml</code>. Create the file if needed and preserve other settings. Replace an existing <code>[mcp_servers.habitwhisper]</code> section rather than duplicating it. Use the active configuration if you customized its location.</li></ol>
+<pre><code>[mcp_servers.habitwhisper]
+url = "http://127.0.0.1:8765/mcp"
+http_headers = { Authorization = "Bearer &lt;your-token-from-the-menu&gt;" }</code></pre>
+<p>This example is a template; use the real port and token copied by the app. Start a new local chat or restart the client. <code>codex mcp list</code> checks registration, not successful data access. Ask: “Use habitwhisper to show today's tasks and habits. Make no changes. Include the time zone and last confirmed iCloud import time.” Compare with your iPhone. Cloud tasks and clients on other devices cannot access this Mac's loopback address.</p>
+<h2>Connect Claude Code</h2>
+<ol><li>Click <strong>Claude Code command</strong> and run the copied command in Terminal in the project directory where you will use Claude Code.</li></ol>
+<pre><code>claude mcp add --transport http habitwhisper http://127.0.0.1:8765/mcp --header "Authorization: Bearer &lt;your-token-from-the-menu&gt;"</code></pre>
+<p>The command uses Claude Code's default project-local scope. Add <code>--scope user</code> for all your projects. If the name already exists, remove its old registration in the matching scope before adding it again. Check <code>claude mcp list</code>, open a new session, approve the intended local tools if prompted, and try the same read-only request.</p>
+<h2>Read first, then allow changes</h2>
+<p>Try “What is planned for this week?”, “Show my goals and linked habits” or “Summarize this week's progress with the import time.” Your selected agent generates advice from the available data; the companion has no built-in model.</p>
+<ol><li>Turn on <strong>Allow changes</strong> when ready and open a new chat to refresh the tool catalog.</li><li>Ask the agent to create a clearly named test task for tomorrow at 10:00.</li><li>Verify its title and date, then wait for it to appear on iPhone.</li><li>Try moving and completing this same task. Request deletion separately and confirm it in your client.</li></ol>
+<p>Tasks, subtasks, habits, habit logs, goals, summaries and statistics are available. Habit archiving preserves earlier logs. Be explicit about the object and date. Keep client confirmations for deletion and archiving. Turning <strong>Allow changes</strong> off blocks server writes even from an existing chat.</p>
+<h2>Understand iCloud freshness</h2>
+<p><strong>Last received from iCloud</strong>, or <code>asOf</code> in tool responses, is the last confirmed import on this Mac. It is not the last local write time and does not prove that iPhone has received a Mac change. <strong>Waiting for iCloud data</strong> means an import has not been recorded yet. An old timestamp can be normal when there have been no new changes.</p>
+<p><strong>Refresh summary</strong> rereads data already imported on the Mac; it does not force an immediate cloud download. Keep the devices online and verify the specific expected change. Avoid deleting your local store or repeatedly creating the same task while waiting.</p>
+<h2>Menu controls and privacy</h2>
+<ul><li><strong>MCP server</strong> starts or stops local agent access. Turning it off does not by itself stop the running app's iCloud sync.</li><li><strong>New token</strong> replaces the secret after confirmation. Copy and replace the connection settings in every client afterward.</li><li><strong>Recent actions</strong> shows recent agent writes, not every read or delivery to iPhone.</li><li><strong>Launch at login</strong> starts the installed copy after login. Approve it in System Settings → General → Login Items &amp; Extensions if requested.</li><li><strong>Quit HabitWhisper</strong> stops the app and local server. The app must be running and the Mac awake for agent access.</li></ul>
+<p>The server accepts requests only on <code>127.0.0.1</code> with a token. Do not expose it with port forwarding or a tunnel. Journal entries and private weekly reflection answers are unavailable through MCP, as are arbitrary file, SQL or shell access.</p>
+<p>Your chosen client receives requested task, habit and goal data and may send it to its model provider under that provider's terms and your settings. A local companion does not imply a local model. Read the <a href="https://dvoineu.github.io/habit-whisper-site/privacy/">privacy policy</a> and your client's policy before connecting.</p>
+<p>The token is stored in macOS Keychain. Copied settings contain it as text, and a pasted command may remain in shell history. Never share your token or commit your client config. If exposed, rotate it with <strong>New token</strong> and replace every client's settings. Turn off <strong>MCP server</strong> to stop access immediately.</p>
+<h2>Update or uninstall</h2>
+<p>There is no built-in automatic updater. Download a new version, quit the installed copy, replace it in the same Applications folder and launch from Finder. Keep the data container and Keychain item. Check your data and login setting, then start a new agent chat. With the same endpoint and token, reconnection is usually unnecessary.</p>
+<p>To uninstall, turn off <strong>Allow changes</strong> and <strong>Launch at login</strong>, quit the app, remove only its Codex configuration section and/or run <code>claude mcp remove habitwhisper</code> in the configured scope (<code>--scope user</code> for a user registration), then move the app to Trash. This is not an instruction to delete your iCloud tasks, habits or goals. Local data and the token may remain.</p>
+<h2>Troubleshooting</h2>
+<ul><li><strong>No window:</strong> use the menu bar leaf. Check hidden menu items and launch from Finder.</li><li><strong>No iCloud access:</strong> read the message in the menu, check sign-in and network, then use <strong>Try again</strong>. Production and Development builds use separate environments.</li><li><strong>Stale or empty data:</strong> wait for the expected import with iPhone open and online, then refresh. Do not clear the database.</li><li><strong>Connection refused:</strong> wake the Mac, launch the companion, turn on the server and check its exact address and port.</li><li><strong>401 / Unauthorized:</strong> copy fresh settings from the menu and replace the client's token.</li><li><strong>Writes denied or unknown tool:</strong> check <strong>Allow changes</strong> and open a new chat. Update the companion if needed.</li><li><strong>Two icons or port conflict:</strong> quit the old or duplicate copy and retry the server.</li><li><strong>Login launch fails:</strong> install in Applications and check the macOS Login Items approval. Do not register the app from a mounted DMG.</li><li><strong>Mac write missing on iPhone:</strong> successful local writes do not prove cloud delivery; check network, account and the specific change on iPhone.</li></ul>
+<p>Contact <a href="mailto:support@finik.app">support@finik.app</a> with your Mac model, macOS version, app version and short executable fingerprint from the menu, client version, time and reproduction steps. Do not send tokens, full configurations, private task titles or journal content.</p>
+</section>
+<footer><p>HabitWhisper · <a href="https://dvoineu.github.io/habit-whisper-site/privacy/">Privacy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a></p><p class="meta">Подключение клиентов: <a href="https://developers.openai.com/codex/mcp/">официальная документация Codex MCP</a> · <a href="https://code.claude.com/docs/en/mcp">Claude Code MCP</a>. Проверено при подготовке инструкции 3 ноября 2026 года.</p></footer>
+</main>
+</body>
+</html>

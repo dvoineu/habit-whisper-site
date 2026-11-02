@@ -3,7 +3,7 @@
 <header class="header"><div class="wrap"><a class="brand" href="../"><img src="../assets/icon.png" alt="" width="30" height="30">HabitWhisper</a><nav class="nav" aria-label="Navigation"><a href="../">Home</a><a href="../support/">Support</a><a href="./" aria-current="page">Privacy</a></nav><div class="tools"><button class="chip-btn theme-btn" type="button" aria-label="Toggle theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg></button></div></div></header>
 <main class="wrap"><article class="document"><p class="eyebrow">HabitWhisper</p><p><a href="#ru" lang="ru">Русская версия ↓</a></p>
 <h1>HabitWhisper Privacy Policy</h1>
-<p>Prepared for version 1.0.0 (updated October 31, 2026).</p>
+<p>Prepared for version 1.0.0 (updated November 3, 2026).</p>
 <h2>Your data</h2>
 <p>HabitWhisper stores your habits, logs, tasks, goals, reminders, and journal entries on your device. When iCloud is available for the app, this data syncs through the private CloudKit database in your iCloud account. The active timer session stays local and does not sync through iCloud.</p>
 <p>The app and its widgets share an App Group container on your device to access data and preferences. Widgets, system Spotlight search, notifications, and Live Activities may display habit and task names and progress. You can manage the visibility of these system surfaces in iOS settings.</p>
@@ -12,17 +12,20 @@
 <h2>On-Device Processing and Pro Purchases</h2>
 <p>Natural-language habit parsing, weekly review summaries, and reflection prompts are computed locally on your device using deterministic rules. Your habit, task, and journal text is not sent to a developer-operated server; when iCloud is available, it syncs through Apple&#x27;s service.</p>
 <p>Only display preferences and anonymous technical flags/counters for Pro entitlement state (containing no habit, task, or journal text) are synced via your Apple Account&#x27;s iCloud Key-Value Storage. HabitWhisper Pro subscriptions and lifetime purchases are processed directly by Apple via StoreKit.</p>
+<h2>Connecting agents on Mac</h2>
+<p>The optional HabitWhisper Mac companion provides clients running on the same Mac with access to tasks, habits, goals and related summaries through a token-protected local MCP server. Journal entries and private weekly reflection answers are unavailable through this interface. Write access can be disabled separately; turning off the MCP server stops client access.</p>
+<p>When you connect Codex, Claude Code or another client, requested data becomes available to your chosen agent. The client may send it to its model provider under that provider&#x27;s terms and your settings. A local companion address does not mean the model runs on-device. Do not share the connection token. It is stored in macOS Keychain, and copied client settings also contain the token. You can replace it from the companion menu.</p>
 <h2>Analytics and advertising</h2>
 <p>The current version includes no advertising networks, third-party analytics, or tracking across apps and websites (NSPrivacyTracking = false). The developer does not receive the contents of your habits, tasks, goals, or journal through the app and does not operate a server to collect them.</p>
 <p>Apple services, including iCloud, the App Store, and TestFlight, are subject to Apple&#x27;s terms and privacy policy. During beta testing, Apple may provide the developer with diagnostics and feedback you submit through TestFlight. Do not include information in feedback that you do not wish to share.</p>
 <h2>Managing your data</h2>
-<p>You can revoke notification and Apple Health permissions in iOS settings. You can manage iCloud sync and stored data in your Apple Account settings. Deleting the app removes local app data from the device, but does not by itself delete data stored in your iCloud account. Archiving entries within HabitWhisper keeps them in the app.</p>
+<p>You can revoke notification and Apple Health permissions in iOS settings. You can manage iCloud sync and stored data in your Apple Account settings. Deleting the iPhone app removes local app data from the device, but does not by itself delete data stored in your iCloud account. On Mac, moving the app to Trash may leave its local store, settings and Keychain token; contact support for help with complete removal. Archiving entries within HabitWhisper keeps them in the app.</p>
 <h2>Contact</h2>
 <p>Developer: Aliaksandr Dvoineu.</p>
 <p>Privacy contact email: <a href="mailto:support@finik.app">support@finik.app</a>.</p>
 <section class="language" id="ru" lang="ru">
 <h1>Политика конфиденциальности HabitWhisper</h1>
-<p>Подготовлено для версии 1.0.0 (обновлено 31 октября 2026 года).</p>
+<p>Подготовлено для версии 1.0.0 (обновлено 3 ноября 2026 года).</p>
 <h2>Ваши данные</h2>
 <p>HabitWhisper хранит ваши привычки, отметки, задачи, цели, напоминания и записи дневника на устройстве. Если iCloud доступен для приложения, эти данные синхронизируются через приватную базу вашего аккаунта iCloud (CloudKit). Активная сессия таймера хранится локально и не синхронизируется через iCloud.</p>
 <p>Приложение и его виджеты используют общее хранилище (App Group) на вашем устройстве для доступа к данным и настройкам. Виджеты, системный поиск (Spotlight), уведомления и Live Activities могут показывать названия привычек, задач и сведения о прогрессе. Управлять видимостью этих системных поверхностей можно в настройках iOS.</p>
@@ -31,11 +34,14 @@
 <h2>Локальная обработка и покупки Pro</h2>
 <p>Разбор свободной фразы привычки, итоги недели и вопросы для рефлексии рассчитываются локально на вашем устройстве по детерминированным правилам. Тексты ваших привычек, задач и дневника не отправляются на сервер разработчика; при доступном iCloud они синхронизируются через сервис Apple.</p>
 <p>В хранилище iCloud Key-Value Storage вашего аккаунта Apple синхронизируются только пользовательские настройки отображения и обезличенные технические флаги/счётчики статуса доступа Pro (без текста привычек, задач и дневника). Оформление и восстановление покупок HabitWhisper Pro обрабатываются напрямую через систему App Store / StoreKit компании Apple.</p>
+<h2>Подключение агентов на Mac</h2>
+<p>Необязательный компаньон HabitWhisper для Mac предоставляет запущенным на том же Mac клиентам доступ к задачам, привычкам, целям и связанным сводкам через локальный MCP-сервер с токеном. Дневник и личные ответы недельной рефлексии через этот интерфейс недоступны. Доступ к записи можно выключить отдельно; выключение MCP-сервера прекращает доступ клиентов.</p>
+<p>При подключении Codex, Claude Code или другого клиента запрошенные данные становятся доступны выбранному агенту. Клиент может передавать их своему провайдеру модели в соответствии с его условиями и вашими настройками. Локальный адрес компаньона не означает, что модель работает на устройстве. Не передавайте токен подключения другим людям. Он хранится в Связке ключей macOS; скопированная конфигурация клиента также содержит токен. Заменить токен можно в меню компаньона.</p>
 <h2>Аналитика и реклама</h2>
 <p>В текущей версии нет рекламных сетей, сторонней аналитики или отслеживания между приложениями и сайтами (NSPrivacyTracking = false). Разработчик не получает содержимое ваших привычек, задач, целей и дневника через приложение и не имеет собственного сервера для их сбора.</p>
 <p>Сервисы Apple, включая iCloud, App Store и TestFlight, работают по условиям и политике конфиденциальности Apple. При beta-тестировании Apple может предоставлять разработчику диагностику и отправленные вами отзывы через TestFlight. Не включайте в отзывы сведения, которыми не хотите делиться.</p>
 <h2>Управление данными</h2>
-<p>Разрешения на уведомления и Apple Health можно отозвать в настройках iOS. Синхронизацией и данными iCloud можно управлять в настройках вашего аккаунта Apple. Удаление приложения удаляет его локальные данные с устройства, но само по себе не удаляет копию из вашего iCloud. Архивирование записей внутри HabitWhisper сохраняет их в приложении.</p>
+<p>Разрешения на уведомления и Apple Health можно отозвать в настройках iOS. Синхронизацией и данными iCloud можно управлять в настройках вашего аккаунта Apple. Удаление приложения на iPhone удаляет его локальные данные с устройства, но само по себе не удаляет копию из вашего iCloud. На Mac перемещение приложения в Корзину может оставить локальное хранилище, настройки и токен в Связке ключей; за помощью с полным удалением обратитесь в поддержку. Архивирование записей внутри HabitWhisper сохраняет их в приложении.</p>
 <h2>Связь</h2>
 <p>Разработчик: Aliaksandr Dvoineu.</p>
 <p>Email для вопросов о конфиденциальности: <a href="mailto:support@finik.app">support@finik.app</a>.</p>

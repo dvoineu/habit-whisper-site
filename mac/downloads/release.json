@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "build": "3",
+  "bundleIdentifier": "com.dvoineu.mylifetracker",
+  "minimumMacOS": "26.0",
+  "architecture": "arm64",
+  "cloudKitEnvironment": "Production",
+  "commit": "b5c6682e2d942fcf880c2e8f14609ec5efc3ff07",
+  "sourceHasLocalChanges": true,
+  "preparedAt": "2026-11-02T22:35:22.283800+00:00",
+  "executableSHA256": "60de05ebabc342876d8c9110c98d56ac3913e438d593c0bf0b12d6761c080ad3",
+  "status": "notarized-candidate",
+  "productionSyncAcceptance": "NOT CHECKED",
+  "publication": "NOT PUBLISHED",
+  "notarizedAt": "2026-11-02T22:39:06.106172+00:00",
+  "notarization": {
+    "app": "eb32887f-7a51-46f9-b3a4-3fc198b6e840",
+    "dmg": "79997999-b3fe-4c64-a0ab-9c592923e7aa"
+  },
+  "files": {
+    "HabitWhisper-1.0.0-3-macOS-arm64.dmg": {
+      "sha256": "4f625dc86307a470f78ca41d4ffa9d42c8155eb7985ece62de19c61acf0dba66",
+      "bytes": 5007407
+    },
+    "HabitWhisper-1.0.0-3-macOS-arm64.zip": {
+      "sha256": "1f291635a8b40813005329a5a5563e8b60e041f0ab7bbf933646a2decfac7563",
+      "bytes": 4395573
+    },
+    "Read Me.html": {
+      "sha256": "6ec804f8a17bbee8d3b1e185d01ca54ef168e9957489e954da66bbdee54250d7",
+      "bytes": 37264
+    }
+  }
+}
