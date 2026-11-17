@@ -25,9 +25,10 @@
     <a class="brand" href="./"><img src="assets/icon.png" alt="" width="30" height="30">HabitWhisper</a>
     <nav class="nav" aria-label="Navigation">
       <a href="#features"><span data-l="en">Features</span><span data-l="ru">Возможности</span></a>
+      <a href="#compare"><span data-l="en">Compare</span><span data-l="ru">Сравнение</span></a>
+      <a href="science/"><span data-l="en">Science</span><span data-l="ru">Наука</span></a>
       <a href="#mac">Mac</a>
       <a href="#pricing"><span data-l="en">Pro</span><span data-l="ru">Pro</span></a>
-      <a href="#faq"><span data-l="en">FAQ</span><span data-l="ru">Вопросы</span></a>
       <a href="support/"><span data-l="en">Support</span><span data-l="ru">Поддержка</span></a>
     </nav>
     <div class="tools">
@@ -187,6 +188,284 @@
   </div>
 </section>
 
+<section class="section" id="science" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">Behavioral science · Wave 1</span><span data-l="ru">Поведенческая наука · Волна 1</span></div>
+      <h2><span data-l="en">Neuroplasticity doesn’t reset to zero after one missed day.</span><span data-l="ru">Нейропластичность не обнуляется из-за одного пропуска.</span></h2>
+      <p><span data-l="en">In Phillippa Lally’s 2010 real-world habit formation study, automaticity followed an asymptotic curve peaking around 66 days — and missing a single day did not derail long-term formation. Move the slip day to compare rigid streaks with HabitWhisper’s Consolidation Index (coming in update 1.1).</span><span data-l="ru">В исследовании Филиппы Лалли (2010) автоматизм привычки рос по асимптотической кривой с медианой 66 дней, а единичный пропуск практически не разрушал накопленный результат. Подвигайте день сбоя и сравните жёсткий стрик с Индексом укоренения HabitWhisper (готовится в обновлении 1.1).</span></p>
+    </div>
+
+    <div class="lab-card reveal" id="landing-lab">
+      <div class="lab-controls">
+        <div class="control-group">
+          <label class="control-head" for="landing-slip-day">
+            <span><span data-l="en">Simulate one missed day</span><span data-l="ru">День одного пропуска</span></span>
+            <span class="control-val" id="landing-slip-val">Day 35</span>
+          </label>
+          <input class="lab-range" id="landing-slip-day" type="range" min="10" max="60" value="35">
+        </div>
+
+        <div class="lab-kpis">
+          <div class="lab-kpi">
+            <small><span data-l="en">Traditional streak app</span><span data-l="ru">Обычный трекер стриков</span></small>
+            <output id="landing-out-streak" for="landing-slip-day">0 days (reset)</output>
+          </div>
+          <div class="lab-kpi accent-kpi">
+            <small><span data-l="en">HabitWhisper Consolidation</span><span data-l="ru">Укоренение HabitWhisper</span></small>
+            <output id="landing-out-hw" for="landing-slip-day">77%</output>
+          </div>
+        </div>
+
+        <p class="muted" style="font-size:.9rem">
+          <span data-l="en">Grounded in <cite>Lally et al. (2010)</cite>, <em>European Journal of Social Psychology</em>. <a href="science/66-days-automaticity.html">Explore the full interactive study →</a></span>
+          <span data-l="ru">На базе <cite>Lally et al. (2010)</cite>, <em>European Journal of Social Psychology</em>. <a href="science/66-days-automaticity.html">Открыть полный разбор с симулятором →</a></span>
+        </p>
+      </div>
+
+      <figure class="lab-visual">
+        <svg class="lab-svg" viewBox="0 0 600 250" role="img" aria-labelledby="landing-chart-title">
+          <title id="landing-chart-title">Habit automaticity curve compared to traditional streak reset</title>
+          <line x1="44" y1="216" x2="576" y2="216" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="44" y1="32" x2="44" y2="216" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="44" y1="59.6" x2="576" y2="59.6" stroke="var(--muted)" stroke-width="1" stroke-dasharray="5 5" opacity="0.6"/>
+          <text id="landing-label-target" x="50" y="53" fill="var(--muted)" font-size="11" font-weight="600">85% Autopilot</text>
+          <text id="landing-label-d0" x="44" y="236" fill="var(--muted)" font-size="11">Day 0</text>
+          <text id="landing-label-d35" x="292" y="236" fill="var(--muted)" font-size="11">Day 35</text>
+          <text id="landing-label-d70" x="536" y="236" fill="var(--muted)" font-size="11">Day 70</text>
+          <path id="landing-curve-streak" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-dasharray="4 4" d=""/>
+          <path id="landing-curve-hw" fill="none" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round" d=""/>
+          <circle id="landing-slip-marker" cx="310" cy="70" r="6" fill="var(--accent)" stroke="var(--card)" stroke-width="2"/>
+        </svg>
+        <div class="lab-legend">
+          <span><i class="legend-swatch" style="background:var(--accent)"></i><span data-l="en">HabitWhisper Consolidation (asymptotic)</span><span data-l="ru">Укоренение HabitWhisper (асимптота)</span></span>
+          <span><i class="legend-swatch dashed"></i><span data-l="en">Rigid streak (resets to 0%)</span><span data-l="ru">Жёсткая серия (сброс в 0%)</span></span>
+        </div>
+        <figcaption>
+          <span data-l="en">Model: A_t = A_{t-1} + 0.045·(1 − A_{t-1}) on completion, ×0.965 on one unexcused slip.</span>
+          <span data-l="ru">Модель: A_t = A_{t-1} + 0.045·(1 − A_{t-1}) при выполнении, ×0.965 при одиночном пропуске.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="compare" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">Honest comparison</span><span data-l="ru">Честное сравнение</span></div>
+      <h2><span data-l="en">How HabitWhisper differs from top habit apps.</span><span data-l="ru">Чем HabitWhisper отличается от топ-приложений.</span></h2>
+      <p><span data-l="en">Most trackers excel at one narrow angle — checklists, fitness strain, or gamified avatars — while leaving your actual day fragmented.</span><span data-l="ru">Большинство трекеров сильны в одной узкой задаче — чеклистах, нагрузке спорта или геймификации — но разрывают ваш день на куски.</span></p>
+    </div>
+
+    <div tabindex="0" role="region" aria-labelledby="compare-caption-en" class="table-wrapper reveal" data-l="en">
+      <table class="compare-table compare-en">
+        <caption id="compare-caption-en">Feature and behavioral-science comparison of HabitWhisper and leading competitors</caption>
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col" class="hw-col">HabitWhisper</th>
+            <th scope="col">Atoms</th>
+            <th scope="col">Gentler Streak</th>
+            <th scope="col">Streaks / Habitify</th>
+            <th scope="col">Finch / Habitica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Unified daily system (Habits + Tasks + Goals + Journal)</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Full loop</span><span class="cmp-note">Computed goals pull from habits and tasks</span></td>
+            <td><span class="cmp-badge no">— Habits only</span><span class="cmp-note">No tasks or measurable goal math</span></td>
+            <td><span class="cmp-badge no">— Fitness only</span><span class="cmp-note">No tasks, reading, or cognitive habits</span></td>
+            <td><span class="cmp-badge part">~ Partial</span><span class="cmp-note">Habits only; no integrated journal or goals</span></td>
+            <td><span class="cmp-badge part">~ Basic</span><span class="cmp-note">Simple to-do checklists tied to game rewards</span></td>
+          </tr>
+          <tr>
+            <th scope="row">66-day automaticity index &amp; partial progress</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Wave 1 (1.1)</span><span class="cmp-note">Lally asymptotic curve + weekly flexible streaks</span></td>
+            <td><span class="cmp-badge part">~ Rule only</span><span class="cmp-note">“Don’t miss twice” reminder, no curve</span></td>
+            <td><span class="cmp-badge part">~ Activity path</span><span class="cmp-note">Workout strain model only</span></td>
+            <td><span class="cmp-badge no">— Binary streaks</span><span class="cmp-note">One missed day resets the chain to zero</span></td>
+            <td><span class="cmp-badge no">— Punitive HP</span><span class="cmp-note">Missed habits damage avatar or pause quests</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Physiological pacing &amp; elastic targets (Min · Norm · Challenge)</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Health + Wave 2</span><span class="cmp-note">Read-only Apple Health context + gentle day mode</span></td>
+            <td><span class="cmp-badge part">~ Snooze</span><span class="cmp-note">Manual snooze without sleep/HR context</span></td>
+            <td><span class="cmp-badge yes">✓ Strong</span><span class="cmp-note">Adapts fitness targets to recovery</span></td>
+            <td><span class="cmp-badge no">— Fixed target</span><span class="cmp-note">Single rigid threshold every day</span></td>
+            <td><span class="cmp-badge no">— None</span><span class="cmp-note">No physiological adaptation</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Intrinsic motivation vs. Overjustification Effect</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Adult &amp; calm</span><span class="cmp-note">Rewards via real life impact, 0 manipulative loot</span></td>
+            <td><span class="cmp-badge yes">✓ Identity-based</span><span class="cmp-note">Grounded in Atomic Habits</span></td>
+            <td><span class="cmp-badge yes">✓ Empathetic</span><span class="cmp-note">Self-compassionate tone</span></td>
+            <td><span class="cmp-badge part">~ Neutral</span><span class="cmp-note">Driven by streak anxiety</span></td>
+            <td><span class="cmp-badge no">— Extrinsic RPG</span><span class="cmp-note">Pets/coins risk crowding out internal drive</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Privacy &amp; data ownership</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ 0 trackers</span><span class="cmp-note">No account, private iCloud, local Health memory</span></td>
+            <td><span class="cmp-badge part">~ Account</span><span class="cmp-note">Cloud account &amp; analytics</span></td>
+            <td><span class="cmp-badge yes">✓ On-device</span><span class="cmp-note">Privacy-respecting iCloud storage</span></td>
+            <td><span class="cmp-badge part">~ Mixed</span><span class="cmp-note">Streaks local; Habitify requires account</span></td>
+            <td><span class="cmp-badge part">~ Cloud server</span><span class="cmp-note">Server-hosted profiles &amp; telemetry</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Apple ecosystem &amp; AI agent MCP</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Native + MCP</span><span class="cmp-note">Live Activity, Watch, Control Center, Mac MCP</span></td>
+            <td><span class="cmp-badge part">~ Basic widgets</span><span class="cmp-note">Standard iOS/Android widgets</span></td>
+            <td><span class="cmp-badge yes">✓ Watch &amp; widgets</span><span class="cmp-note">Deep Apple Watch fitness UI</span></td>
+            <td><span class="cmp-badge yes">✓ Widgets</span><span class="cmp-note">Good Siri/Watch shortcuts, no Mac MCP</span></td>
+            <td><span class="cmp-badge no">— Mobile UI</span><span class="cmp-note">No Dynamic Island focus or local MCP</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div tabindex="0" role="region" aria-labelledby="compare-caption-ru" class="table-wrapper reveal" data-l="ru">
+      <table class="compare-table compare-ru">
+        <caption id="compare-caption-ru">Сравнение возможностей и научного подхода HabitWhisper с ведущими конкурентами</caption>
+        <thead>
+          <tr>
+            <th scope="col">Критерий</th>
+            <th scope="col" class="hw-col">HabitWhisper</th>
+            <th scope="col">Atoms</th>
+            <th scope="col">Gentler Streak</th>
+            <th scope="col">Streaks / Habitify</th>
+            <th scope="col">Finch / Habitica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Единый контур: Привычки + Задачи + Цели + Дневник</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Полный цикл</span><span class="cmp-note">Цели сами считают прогресс из привычек и задач</span></td>
+            <td><span class="cmp-badge no">— Только привычки</span><span class="cmp-note">Нет задач и связки с измеримыми целями</span></td>
+            <td><span class="cmp-badge no">— Только спорт</span><span class="cmp-note">Нет чтения, задач, фокуса и дневника</span></td>
+            <td><span class="cmp-badge part">~ Частично</span><span class="cmp-note">Фокус на трекинге без общего контура дня</span></td>
+            <td><span class="cmp-badge part">~ Базовый</span><span class="cmp-note">Чеклист подвязан к игровой экономике</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Кривая укоренения (66 дней) и вклад частичных шагов</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Волна 1 (1.1)</span><span class="cmp-note">Асимптота Лалли + недельные серии timesPerWeek</span></td>
+            <td><span class="cmp-badge part">~ Правило</span><span class="cmp-note">Напоминание «не пропускай дважды», без кривой</span></td>
+            <td><span class="cmp-badge part">~ Шкала нагрузки</span><span class="cmp-note">Только для физической активности</span></td>
+            <td><span class="cmp-badge no">— Жёсткий стрик</span><span class="cmp-note">Один пропуск сбрасывает счётчик в 0</span></td>
+            <td><span class="cmp-badge no">— Штраф HP</span><span class="cmp-note">Пропуск наказывает персонажа / срывает квест</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Адаптация к усталости и эластичные нормы (Мин · Норма · Вызов)</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Health + Волна 2</span><span class="cmp-note">Read-only сон Apple Health и «Бережный режим»</span></td>
+            <td><span class="cmp-badge part">~ Пауза</span><span class="cmp-note">Ручной snooze без учёта сна и физиологии</span></td>
+            <td><span class="cmp-badge yes">✓ Сильно в спорте</span><span class="cmp-note">Коррекция нагрузки по восстановлению</span></td>
+            <td><span class="cmp-badge no">— Жёсткая норма</span><span class="cmp-note">Фиксированная цель без права на малый шаг</span></td>
+            <td><span class="cmp-badge no">— Нет</span><span class="cmp-note">Без физиологической адаптации</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Внутренняя мотивация без эффекта вытеснения (Overjustification)</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Взрослая эстетика</span><span class="cmp-note">Подкрепление через факты жизни, 0 манипуляций</span></td>
+            <td><span class="cmp-badge yes">✓ Идентичность</span><span class="cmp-note">Философия Atomic Habits</span></td>
+            <td><span class="cmp-badge yes">✓ Бережность</span><span class="cmp-note">Спокойный тон без вины</span></td>
+            <td><span class="cmp-badge part">~ Нейтрально</span><span class="cmp-note">Держится на страхе потерять серию</span></td>
+            <td><span class="cmp-badge no">— RPG / питомец</span><span class="cmp-note">Внешние очки вытесняют внутренний смысл</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Приватность и владение данными</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ 0 трекеров</span><span class="cmp-note">Без регистрации, личный iCloud, Health в памяти</span></td>
+            <td><span class="cmp-badge part">~ Аккаунт</span><span class="cmp-note">Облачный профиль и аналитика</span></td>
+            <td><span class="cmp-badge yes">✓ На устройстве</span><span class="cmp-note">Хранение в личном iCloud</span></td>
+            <td><span class="cmp-badge part">~ По-разному</span><span class="cmp-note">Streaks локален; Habitify требует аккаунт</span></td>
+            <td><span class="cmp-badge part">~ Серверы</span><span class="cmp-note">Серверные аккаунты и телеметрия</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Экосистема Apple и локальный Mac MCP для ИИ-агентов</th>
+            <td class="hw-cell"><span class="cmp-badge yes">✓ Нативно + MCP</span><span class="cmp-note">Live Activity, Watch, Control Center, Mac MCP</span></td>
+            <td><span class="cmp-badge part">~ Базово</span><span class="cmp-note">Обычные виджеты iOS/Android</span></td>
+            <td><span class="cmp-badge yes">✓ Watch + виджеты</span><span class="cmp-note">Глубокий фитнес-компаньон на Watch</span></td>
+            <td><span class="cmp-badge yes">✓ Виджеты</span><span class="cmp-note">Siri/Watch есть, Mac MCP нет</span></td>
+            <td><span class="cmp-badge no">— Мобильный UI</span><span class="cmp-note">Нет Live Activity фокуса и локального MCP</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roadmap" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span data-l="en">Evidence-based roadmap</span><span data-l="ru">Научная дорожная карта</span></div>
+      <h2><span data-l="en">Every upcoming wave ships on peer-reviewed foundations.</span><span data-l="ru">Каждая волна развития опирается на научные первоисточники.</span></h2>
+      <p><span data-l="en">We integrate behavior-science mechanics in focused waves — verifying real retention before adding complexity.</span><span data-l="ru">Мы внедряем механики короткими волнами и проверяем реальную пользу для удержания без перегруза интерфейса.</span></p>
+    </div>
+
+    <div class="roadmap-grid">
+      <article class="road-card reveal">
+        <div class="road-top">
+          <span class="road-ver">v1.0 · Foundation</span>
+          <span class="road-status live"><span data-l="en">Live on App Store</span><span data-l="ru">В App Store</span></span>
+        </div>
+        <h3><span data-l="en">Closed-loop day system &amp; zero-guilt architecture</span><span data-l="ru">Единый контур дня без чувства вины</span></h3>
+        <p><span data-l="en">Habits, recurring tasks, computed goals, mood journal, Live Activity focus timer, Apple Health read-only auto-check, Apple Watch, and Mac MCP companion.</span><span data-l="ru">Привычки, повторяющиеся задачи, вычисляемые цели, дневник настроения, фокус в Live Activity, автоотметки Apple Health, Apple Watch и Mac MCP.</span></p>
+        <div class="road-cite"><span data-l="en">Includes planned archive cleanup &amp; 4 new locales in 1.1.</span><span data-l="ru">В 1.1 также входят очистка архива и 4 новых языка.</span></div>
+      </article>
+
+      <article class="road-card featured reveal d1">
+        <div class="road-top">
+          <span class="road-ver"><span data-l="en">Wave 1 · Update 1.1</span><span data-l="ru">Волна 1 · Релиз 1.1</span></span>
+          <span class="road-status active"><span data-l="en">In development</span><span data-l="ru">В разработке</span></span>
+        </div>
+        <h3><span data-l="en">66-Day Consolidation Index &amp; Weekly Rhythm</span><span data-l="ru">Индекс укоренения (66 дней) и недельные серии</span></h3>
+        <p><span data-l="en">Replaces brittle all-or-nothing chains with a non-linear automaticity score (0–100%), credits partial effort, tracks weekly streaks for flexible schedules, and adds a Pro Consolidation Map.</span><span data-l="ru">Заменяет хрупкие стрики шкалой автоматизма (0–100%), засчитывает частичные шаги, добавляет недельные серии для гибких привычек и Карту укоренения в Pro.</span></p>
+        <div class="road-cite">
+          <span data-l="en">Research: <cite>Lally et al. (2010)</cite>, <cite>Gardner et al. (2012 SRBAI)</cite>. <a class="road-link" href="science/66-days-automaticity.html">Read analysis →</a></span>
+          <span data-l="ru">Исследования: <cite>Lally et al. (2010)</cite>, <cite>Gardner et al. (2012 SRBAI)</cite>. <a class="road-link" href="science/66-days-automaticity.html">Читать разбор →</a></span>
+        </div>
+      </article>
+
+      <article class="road-card reveal">
+        <div class="road-top">
+          <span class="road-ver"><span data-l="en">Wave 2 · Update 1.2</span><span data-l="ru">Волна 2 · Релиз 1.2</span></span>
+          <span class="road-status"><span data-l="en">Planned</span><span data-l="ru">План</span></span>
+        </div>
+        <h3><span data-l="en">Daily Capacity Scale &amp; Elastic Targets (Min · Norm · Challenge)</span><span data-l="ru">Ресурс дня и эластичные нормы (Мин · Норма · Вызов)</span></h3>
+        <p><span data-l="en">One-tap gentle mode when sleep drops in Apple Health: scales daily habits down to a 2-minute Minimum to keep the neural cue-action loop alive without burnout.</span><span data-l="ru">Бережный режим в 1 тап при недосыпе по Apple Health: сжимает дневную планку до 2-минутного минимума, сохраняя связку «триггер → действие» без выгорания.</span></p>
+        <div class="road-cite">
+          <span data-l="en">Research: <cite>Scott &amp; Nowlis (2013)</cite>, <cite>Sharif &amp; Shu (2017)</cite>, <cite>McEwen (1998)</cite>. <a class="road-link" href="science/elastic-habits-and-sleep.html">Read analysis →</a></span>
+          <span data-l="ru">Исследования: <cite>Scott &amp; Nowlis (2013)</cite>, <cite>Sharif &amp; Shu (2017)</cite>, <cite>McEwen (1998)</cite>. <a class="road-link" href="science/elastic-habits-and-sleep.html">Читать разбор →</a></span>
+        </div>
+      </article>
+
+      <article class="road-card reveal d1">
+        <div class="road-top">
+          <span class="road-ver"><span data-l="en">Wave 3 · Update 1.3</span><span data-l="ru">Волна 3 · Релиз 1.3</span></span>
+          <span class="road-status"><span data-l="en">Planned</span><span data-l="ru">План</span></span>
+        </div>
+        <h3><span data-l="en">N-of-1 Personal Patterns &amp; Chronobiology Compass</span><span data-l="ru">Личные закономерности N-of-1 и компас дня</span></h3>
+        <p><span data-l="en">100% deterministic, on-device correlations (0 cloud LLMs) showing how sleep and individual habits statistically change your mood ratings, plus time-of-day shifts from real timestamps.</span><span data-l="ru">100% детерминированный расчёт на устройстве (без облачных LLM): как сон и конкретные привычки влияют на оценку дня и в какое окно времени вы реально закрываете их чаще.</span></p>
+        <div class="road-cite">
+          <span data-l="en">Research: <cite>Shiffman et al. (2008 EMA)</cite>, <cite>Ryan &amp; Deci (2000 SDT)</cite>. <a class="road-link" href="science/">Science Hub →</a></span>
+          <span data-l="ru">Исследования: <cite>Shiffman et al. (2008 EMA)</cite>, <cite>Ryan &amp; Deci (2000 SDT)</cite>. <a class="road-link" href="science/">Научный хаб →</a></span>
+        </div>
+      </article>
+
+      <article class="road-card reveal" style="grid-column:1 / -1">
+        <div class="road-top">
+          <span class="road-ver"><span data-l="en">Wave 4 · Update 1.4</span><span data-l="ru">Волна 4 · Релиз 1.4</span></span>
+          <span class="road-status"><span data-l="en">Planned</span><span data-l="ru">План</span></span>
+        </div>
+        <h3><span data-l="en">90-Second Urge Wave &amp; If–Then Anchor Chains (WOOP)</span><span data-l="ru">«Волна импульса · 90 сек» и цепочки якорей «Если — То»</span></h3>
+        <p><span data-l="en">Haptic physiological-sigh trainer for `.atMost` limit habits and focus friction, plus context-triggered habit chains and obstacle pre-planning on Lock Screen Live Activities.</span><span data-l="ru">Тактильный тренажёр физиологического вздоха для привычек ограничения (`.atMost`) и прокрастинации, а также цепочки якорей и страховка «Если — То» в Live Activity.</span></p>
+        <div class="road-cite">
+          <span data-l="en">Research: <cite>Balban, Spiegel &amp; Huberman (2023)</cite>, <cite>Gollwitzer (1999)</cite>, <cite>Oettingen (2012)</cite>. <a class="road-link" href="science/urge-surfing-and-physiological-sigh.html">Try live 90s timer →</a></span>
+          <span data-l="ru">Исследования: <cite>Balban, Spiegel &amp; Huberman (2023)</cite>, <cite>Gollwitzer (1999)</cite>, <cite>Oettingen (2012)</cite>. <a class="road-link" href="science/urge-surfing-and-physiological-sigh.html">Попробовать 90-сек таймер →</a></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section mac" id="mac" style="padding-top:10px">
   <div class="wrap">
     <div class="mac-grid">
@@ -268,11 +547,12 @@
       <div class="plan pro reveal d1">
         <div class="badge">PRO</div>
         <h3>HabitWhisper Pro</h3>
-        <div class="price"><span data-l="en">More room for your plans</span><span data-l="ru">Больше места для ваших планов</span></div>
+        <div class="price"><span data-l="en">Deep habit science &amp; unlimited room</span><span data-l="ru">Глубокая наука привычек и свобода без границ</span></div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Everything in Free</span><span data-l="ru">Всё из бесплатного плана</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en"><b>Consolidation Map &amp; autopilot forecast</b> <small class="muted">(coming in Wave 1 · v1.1)</small></span><span data-l="ru"><b>Карта укоренения и прогноз автопилота</b> <small class="muted">(выйдет в Волне 1 · 1.1)</small></span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en"><b>Unlimited</b> habits and goals</span><span data-l="ru">Привычки и цели <b>без лимита</b></span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Additional icons and colors</span><span data-l="ru">Дополнительные значки и цвета</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-l="en">Upcoming Wave 2–4 behavioral tools included</span><span data-l="ru">Все будущие научные инструменты Волн 2–4 включены</span></li>
         </ul>
         <div class="options">
           <span><span data-l="en">Yearly</span><span data-l="ru">На год</span><small data-l="en">7 days free to start</small><small data-l="ru">первые 7 дней бесплатно</small></span>
@@ -338,6 +618,8 @@
   <div class="wrap">
     <span>© 2026 HabitWhisper</span>
     <nav aria-label="Footer">
+      <a href="science/"><span data-l="en">Science &amp; Blog</span><span data-l="ru">Наука и блог</span></a>
+      <a href="#compare"><span data-l="en">Compare</span><span data-l="ru">Сравнение</span></a>
       <a href="support/"><span data-l="en">Support</span><span data-l="ru">Поддержка</span></a>
       <a href="privacy/"><span data-l="en">Privacy policy</span><span data-l="ru">Конфиденциальность</span></a>
       <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span data-l="en">Terms of use</span><span data-l="ru">Условия использования</span></a>
