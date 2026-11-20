@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
 <script>
-(function(){try{var t=localStorage.getItem('hw-theme');if(t)document.documentElement.dataset.theme=t;var l=localStorage.getItem('hw-lang')||((navigator.language||'').toLowerCase().indexOf('ru')===0||(navigator.language||'').toLowerCase().indexOf('be')===0?'ru':'en');document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}})();
+(function(){try{var t=localStorage.getItem('hw-theme');if(t)document.documentElement.dataset.theme=t;var saved=localStorage.getItem('hw-lang');var l=(saved==='ru'||saved==='en')?saved:((navigator.language||'').toLowerCase().indexOf('ru')===0||(navigator.language||'').toLowerCase().indexOf('be')===0?'ru':'en');document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}})();
 </script>
 </head>
 <body>
@@ -24,6 +24,7 @@
     <a class="brand" href="../"><img src="../assets/icon.png" alt="" width="30" height="30">HabitWhisper</a>
     <nav class="nav" aria-label="Navigation" data-en="Navigation" data-ru="Навигация">
       <a href="../#features"><span data-l="en">Features</span><span data-l="ru">Возможности</span></a>
+      <a href="../whats-new/"><span data-l="en">What’s New 1.1</span><span data-l="ru">Новое в 1.1</span></a>
       <a href="../#compare"><span data-l="en">Compare</span><span data-l="ru">Сравнение</span></a>
       <a href="./" aria-current="page"><span data-l="en">Science</span><span data-l="ru">Наука</span></a>
       <a href="../#roadmap"><span data-l="en">Roadmap</span><span data-l="ru">Карта развития</span></a>
@@ -95,6 +96,7 @@
     <span>© 2026 HabitWhisper</span>
     <nav aria-label="Footer">
       <a href="../"><span data-l="en">Home</span><span data-l="ru">Главная</span></a>
+      <a href="../whats-new/"><span data-l="en">What’s New 1.1</span><span data-l="ru">Новое в 1.1</span></a>
       <a href="../#compare"><span data-l="en">Compare</span><span data-l="ru">Сравнение</span></a>
       <a href="../support/"><span data-l="en">Support</span><span data-l="ru">Поддержка</span></a>
       <a href="../privacy/"><span data-l="en">Privacy policy</span><span data-l="ru">Конфиденциальность</span></a>

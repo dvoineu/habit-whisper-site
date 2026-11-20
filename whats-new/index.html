@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" data-lang="en" data-multilang="6">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>What’s New in 1.1 · HabitWhisper</title>
+<meta name="description" content="HabitWhisper 1.1 guide and changelog: 66-day Consolidation Index, Consolidation Map, honest weekly streaks, permanent archive cleanup, 4 new languages, and interactive in-app tour.">
+<meta name="theme-color" content="#F3F2F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#181716" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="What’s New in HabitWhisper 1.1">
+<meta property="og:description" content="Explore the 66-day Consolidation Index, Consolidation Map, honest weekly streaks, archive cleanup, and 6 languages with screenshots and step-by-step guides.">
+<meta property="og:image" content="../assets/icon.png">
+<link rel="icon" href="../assets/icon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<script>
+(function () {
+  var supported = ['en', 'ru', 'es-MX', 'pt-BR', 'de', 'fr-FR'];
+  function matchLocale(raw) {
+    if (!raw) return null;
+    var s = String(raw).trim().toLowerCase();
+    for (var i = 0; i < supported.length; i++) {
+      if (supported[i].toLowerCase() === s) return supported[i];
+    }
+    if (s.indexOf('ru') === 0 || s.indexOf('be') === 0) return 'ru';
+    if (s.indexOf('es') === 0) return 'es-MX';
+    if (s.indexOf('pt') === 0) return 'pt-BR';
+    if (s.indexOf('de') === 0) return 'de';
+    if (s.indexOf('fr') === 0) return 'fr-FR';
+    if (s.indexOf('en') === 0) return 'en';
+    return null;
+  }
+  try {
+    var t = localStorage.getItem('hw-theme');
+    if (t) document.documentElement.dataset.theme = t;
+    var params = new URLSearchParams(location.search);
+    var fromQuery = matchLocale(params.get('lang'));
+    var fromSaved = matchLocale(localStorage.getItem('hw-whats-new-lang')) || matchLocale(localStorage.getItem('hw-lang'));
+    var fromNav = matchLocale(navigator.language);
+    var lang = fromQuery || fromSaved || fromNav || 'en';
+    document.documentElement.dataset.lang = lang;
+    document.documentElement.lang = lang;
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-i18n="skip">Skip to main content</a>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/icon.png" alt="" width="30" height="30">HabitWhisper</a>
+    <nav class="nav" id="wn-nav" aria-label="Navigation">
+      <a href="../" data-i18n="navHome">Home</a>
+      <a href="./" aria-current="page" data-i18n="navWhatsNew">What’s New 1.1</a>
+      <a href="../science/" data-i18n="navScience">Science</a>
+      <a href="../mac/" data-i18n="navMac">Mac</a>
+      <a href="../support/" data-i18n="navSupport">Support</a>
+    </nav>
+    <div class="tools">
+      <label class="visually-hidden" for="wn-lang-select" data-i18n="langLabel">Choose language</label>
+      <select id="wn-lang-select" class="lang-select" name="lang">
+        <option value="en">EN · English</option>
+        <option value="ru">RU · Русский</option>
+        <option value="es-MX">ES · Español</option>
+        <option value="pt-BR">PT · Português</option>
+        <option value="de">DE · Deutsch</option>
+        <option value="fr-FR">FR · Français</option>
+      </select>
+      <button class="chip-btn theme-btn" id="wn-theme-btn" type="button" aria-label="Toggle theme">
+        <svg class="sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="wn-hero">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="wn-hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="heroEyebrow">Release 1.1 · Guide &amp; Changelog</div>
+          <h1 data-i18n="heroTitle">What’s new in HabitWhisper 1.1</h1>
+          <p class="lead" data-i18n="heroLead">Your habits now grow along a realistic 66-day automaticity curve instead of fragile streaks — alongside a system-wide Consolidation Map, honest weekly streaks, manual archive cleanup, and four new languages.</p>
+          <ul class="wn-badges" id="wn-badges">
+            <li>66-day Consolidation Index</li>
+            <li>Consolidation Map</li>
+            <li>Weekly streaks</li>
+            <li>Archive cleanup</li>
+            <li>6 languages</li>
+          </ul>
+          <div class="ctas">
+            <a class="button" id="wn-appstore-top" href="https://apps.apple.com/us/app/id6808374814">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+              <span><small data-i18n="appStoreSmall">Available on the</small><span data-i18n="appStoreLabel">App Store</span></span>
+            </a>
+            <a class="button ghost" href="../science/66-days-automaticity.html" data-i18n="heroScienceCta">Try the 66-day curve simulator</a>
+          </div>
+          <nav class="wn-jump" aria-label="Release sections" id="wn-jump">
+            <a href="#consolidation" data-i18n="jump1">1. Consolidation Index</a>
+            <a href="#map" data-i18n="jump2">2. Consolidation Map</a>
+            <a href="#weekly" data-i18n="jump3">3. Weekly Streaks</a>
+            <a href="#archive" data-i18n="jump4">4. Archive Cleanup</a>
+            <a href="#languages" data-i18n="jump5">5. 6 Languages &amp; Tour</a>
+            <a href="#changelog" data-i18n="jump6">Summary</a>
+          </nav>
+        </div>
+
+        <div class="wn-hero-stage">
+          <div class="phone">
+            <img id="wn-hero-img" src="../assets/screens/en/progress.webp" alt="HabitWhisper 1.1 Progress screen showing the Consolidation Map and 66-day automaticity scores" width="600" height="1304" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 66-day Consolidation Index -->
+  <section class="wn-section" id="consolidation">
+    <div class="wrap">
+      <div class="wn-grid">
+        <div class="wn-copy">
+          <div class="wn-meta">
+            <span class="wn-tag" data-i18n="s1Tag">Free · Every habit</span>
+            <span class="wn-tag neutral">Lally et al., 2010</span>
+          </div>
+          <h2 data-i18n="s1Title">66-Day Consolidation Index</h2>
+          <p class="wn-lead" data-i18n="s1Lead">One missed day no longer erases weeks of real progress. Every habit now calculates its automaticity score (0–100%) from your existing check-in history.</p>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblImproved">What improved</h3>
+            <ul id="s1-improved">
+              <li><strong>Realistic asymptotic curve:</strong> habits strengthen fastest in the first weeks and stabilize near autopilot around ~66 repetitions.</li>
+              <li><strong>Gentle misses:</strong> a single missed day trims about 3.5% instead of dropping your score to zero.</li>
+              <li><strong>Partial effort counts:</strong> counter and timer habits credit partial progress proportionally toward consolidation.</li>
+              <li><strong>Four clear phases:</strong> Start, Building, Stabilizing, and Autopilot (85%+), plus an estimate of remaining repetitions.</li>
+            </ul>
+          </div>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblHowTo">How to use it</h3>
+            <ol id="s1-steps">
+              <li>Open any habit from <strong>Today</strong> or the <strong>Habits Catalog</strong>.</li>
+              <li>Review the <strong>Automaticity</strong> card right below your summary metrics — it is already computed from your past check-ins.</li>
+              <li>Tap <strong>Why 66 days</strong> inside the card to expand the explanation of the curve and phases.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="wn-media pair">
+          <figure class="wn-shot">
+            <div class="phone compact">
+              <img data-wn-shot="consolidation-detail" src="../assets/whats-new/consolidation-detail-en.webp" alt="Habit detail screen showing the 66-day Automaticity card at 68% in the Stabilizing phase" width="600" height="1065" loading="lazy">
+            </div>
+            <figcaption data-i18n="s1Cap1">Consolidation card inside habit details with phase chip and steps to autopilot.</figcaption>
+          </figure>
+          <figure class="wn-shot">
+            <div class="phone compact">
+              <img data-wn-shot="consolidation-why" src="../assets/whats-new/consolidation-why-en.webp" alt="Expanded Why 66 days explanation inside the Automaticity card" width="600" height="1065" loading="lazy">
+            </div>
+            <figcaption data-i18n="s1Cap2">Tap “Why 66 days” to read how the curve handles single misses.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. System-Wide Consolidation Map -->
+  <section class="wn-section" id="map">
+    <div class="wrap">
+      <div class="wn-grid reverse">
+        <div class="wn-copy">
+          <div class="wn-meta">
+            <span class="wn-tag" data-i18n="s2Tag">Progress → Overview</span>
+            <span class="wn-tag neutral" data-i18n="s2Tier">Free preview · Full map in Pro</span>
+          </div>
+          <h2 data-i18n="s2Title">Consolidation Map &amp; Autopilot Forecast</h2>
+          <p class="wn-lead" data-i18n="s2Lead">See how resilient your entire routine is in one glance — average index, how many habits have reached autopilot, and which habit is closest next.</p>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblImproved">What improved</h3>
+            <ul id="s2-improved">
+              <li><strong>System-wide summary:</strong> tracks your average Consolidation Index and total habits on autopilot.</li>
+              <li><strong>Autopilot forecast:</strong> highlights which habit is closest to reaching 85% and roughly how many steps remain.</li>
+              <li><strong>Phase breakdown &amp; quick jump:</strong> filter at a glance across Start, Building, Stabilizing, and Autopilot, and tap any habit row to open its details and calendar.</li>
+            </ul>
+          </div>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblHowTo">How to use it</h3>
+            <ol id="s2-steps">
+              <li>Open the <strong>Progress</strong> tab and stay on <strong>Overview</strong>.</li>
+              <li>Scroll to <strong>Consolidation Map</strong> to see your overall score and habit breakdown.</li>
+              <li>Tap any habit row to jump directly into its detail screen and monthly calendar.</li>
+            </ol>
+          </div>
+
+          <div class="wn-note" data-i18n="s2Note"><strong>Free vs. Pro:</strong> Every individual habit’s 66-day Consolidation card is free, and Free includes a summary preview of the Consolidation Map. HabitWhisper Pro unlocks the full interactive map, phase breakdown, and autopilot forecast.</div>
+        </div>
+
+        <div class="wn-media">
+          <figure class="wn-shot">
+            <div class="phone">
+              <img data-wn-locale-shot="progress" src="../assets/screens/en/progress.webp" alt="Progress Overview screen displaying the Consolidation Map across all active habits" width="600" height="1304" loading="lazy">
+            </div>
+            <figcaption data-i18n="s2Cap1">Consolidation Map in Progress → Overview, calculated automatically from your history.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Honest Weekly Streaks -->
+  <section class="wn-section" id="weekly">
+    <div class="wrap">
+      <div class="wn-grid">
+        <div class="wn-copy">
+          <div class="wn-meta">
+            <span class="wn-tag" data-i18n="s3Tag">Free · Flexible schedules</span>
+          </div>
+          <h2 data-i18n="s3Title">Honest Weekly Streaks (“N times per week”)</h2>
+          <p class="wn-lead" data-i18n="s3Lead">Habits like strength training 3×/week aren’t meant to be done every day. HabitWhisper now measures them by completed weeks instead of breaking a daily chain on rest days.</p>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblImproved">What improved</h3>
+            <ul id="s3-improved">
+              <li><strong>True weekly streak counter:</strong> tracks consecutive completed weeks and your all-time best weekly streak.</li>
+              <li><strong>Current-week visibility:</strong> shows live progress (for example, <em>This week: 1 of 3</em>) directly inside the Consolidation card.</li>
+              <li><strong>Respects your week start:</strong> honors your Monday/Sunday setting from <em>Settings → Week starts on</em>.</li>
+            </ul>
+          </div>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblHowTo">How to use it</h3>
+            <ol id="s3-steps">
+              <li>Create or edit a habit and choose the <strong>Times per week</strong> schedule (e.g., 3 times a week).</li>
+              <li>Complete it on whichever days fit your week — rest days won’t penalize you.</li>
+              <li>Open the habit card anytime to see your <strong>Weekly streak</strong>, personal best, and current-week count.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="wn-media">
+          <figure class="wn-shot">
+            <div class="phone compact">
+              <img data-wn-shot="weekly-streak" src="../assets/whats-new/weekly-streak-en.webp" alt="Flexible habit detail screen showing Weekly streak: 2 wk (best 4) and This week: 1 of 3" width="600" height="1065" loading="lazy">
+            </div>
+            <figcaption data-i18n="s3Cap1">Flexible “3 times a week” habit with weekly streak and current-week progress.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Manual Permanent Archive Cleanup -->
+  <section class="wn-section" id="archive">
+    <div class="wrap">
+      <div class="wn-grid reverse">
+        <div class="wn-copy">
+          <div class="wn-meta">
+            <span class="wn-tag" data-i18n="s4Tag">Free · Data control</span>
+          </div>
+          <h2 data-i18n="s4Title">Manual Permanent Archive Cleanup</h2>
+          <p class="wn-lead" data-i18n="s4Lead">Keep meaningful finished habits in your archive forever — and permanently remove test entries or outdated experiments whenever you want a clean slate.</p>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblImproved">What improved</h3>
+            <ul id="s4-improved">
+              <li><strong>Multi-select deletion:</strong> pick one or several archived habits at once and review the exact list before confirming.</li>
+              <li><strong>Clean recalculation:</strong> permanently deletes selected habits and their check-in logs, recalculates linked goal progress, and syncs deletion across your iCloud devices.</li>
+              <li><strong>Safe by default:</strong> deletion is only possible from the Archive tab with an explicit confirmation step — no accidental swipes.</li>
+            </ul>
+          </div>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblHowTo">How to use it</h3>
+            <ol id="s4-steps">
+              <li>Open <strong>Habits Catalog</strong> and switch the top filter to <strong>Archive</strong>.</li>
+              <li>Tap <strong>Select</strong> in the top bar and mark the archived habits you want to remove.</li>
+              <li>Tap <strong>Review Deletion</strong> to inspect the selected items and what will be recalculated.</li>
+              <li>Confirm with <strong>Delete Habits Permanently</strong> (this action cannot be undone).</li>
+            </ol>
+          </div>
+
+          <div class="wn-note" data-i18n="s4Note"><strong>Archiving still protects your history:</strong> simply archiving an active habit keeps all its past check-ins and statistics untouched forever unless you explicitly delete it here.</div>
+        </div>
+
+        <div class="wn-media pair">
+          <figure class="wn-shot">
+            <div class="phone compact">
+              <img data-wn-shot="archive-select" src="../assets/whats-new/archive-select-en.webp" alt="Habits Archive screen in multi-select mode with two archived habits checked for deletion" width="600" height="1065" loading="lazy">
+            </div>
+            <figcaption data-i18n="s4Cap1">Step 1: Select archived entries to remove in Habits Catalog → Archive.</figcaption>
+          </figure>
+          <figure class="wn-shot">
+            <div class="phone compact">
+              <img data-wn-shot="archive-confirm" src="../assets/whats-new/archive-confirm-en.webp" alt="Confirmation sheet listing selected habits before permanent deletion" width="600" height="1065" loading="lazy">
+            </div>
+            <figcaption data-i18n="s4Cap2">Step 2: Review the exact list before confirming permanent deletion.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 4 New Languages & In-App Tour -->
+  <section class="wn-section" id="languages">
+    <div class="wrap">
+      <div class="wn-grid">
+        <div class="wn-copy">
+          <div class="wn-meta">
+            <span class="wn-tag" data-i18n="s5Tag">Free · 6 languages + In-App Tour</span>
+          </div>
+          <h2 data-i18n="s5Title">Four New Languages &amp; Interactive In-App Tour</h2>
+          <p class="wn-lead" data-i18n="s5Lead">HabitWhisper 1.1 adds full native localization for four more languages across iPhone, widgets, Live Activities, Apple Watch, and Mac — plus a quick interactive tour right after updating.</p>
+
+          <ul class="wn-langs" aria-label="Supported languages">
+            <li>English</li>
+            <li>Русский</li>
+            <li class="new">Español (México)</li>
+            <li class="new">Português (Brasil)</li>
+            <li class="new">Deutsch</li>
+            <li class="new">Français</li>
+          </ul>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblImproved">What improved</h3>
+            <ul id="s5-improved">
+              <li><strong>Full 6-language coverage:</strong> every screen, widget, notification, Live Activity, Watch companion, and Mac companion is translated with proper pluralization and date formatting.</li>
+              <li><strong>Interactive What’s New tour:</strong> existing users see a brief 3-step highlight sheet once after updating, including a safe miss simulator that never changes your data.</li>
+              <li><strong>Gentle contextual tips:</strong> native iOS tips quietly point out the Consolidation Map and Archive Select button the first time you visit those screens.</li>
+            </ul>
+          </div>
+
+          <div class="wn-box">
+            <h3 data-i18n="lblHowTo">How to use it</h3>
+            <ol id="s5-steps">
+              <li>Switch language anytime in <strong>Settings → Language</strong> — independently from your iPhone’s system language.</li>
+              <li>Want to revisit the 1.1 walkthrough later? Open <strong>Settings → About → What’s new in 1.1</strong>.</li>
+              <li>Dismiss any contextual tip with a single tap, or try the action it points to and it clears automatically.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="wn-media pair">
+          <figure class="wn-shot">
+            <div class="phone">
+              <img data-wn-locale-shot="today" src="../assets/screens/en/today.webp" alt="HabitWhisper Today screen localized in the selected language" width="600" height="1304" loading="lazy">
+            </div>
+            <figcaption data-i18n="s5Cap1">Native interface in your selected language across iPhone, widgets, and Watch.</figcaption>
+          </figure>
+          <figure class="wn-shot">
+            <div class="phone">
+              <img data-wn-shot="whats-new-tour" src="../assets/whats-new/whats-new-tour-en.webp" alt="In-app What's New in 1.1 screen featuring the interactive 66-day miss simulator" width="600" height="1304" loading="lazy">
+            </div>
+            <figcaption data-i18n="s5Cap2">Interactive What’s New 1.1 sheet with a safe live miss simulator.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Compact Summary & Privacy -->
+  <section class="wn-section" id="changelog">
+    <div class="wrap">
+      <div class="wn-summary-card">
+        <div>
+          <div class="eyebrow" style="margin-bottom:10px" data-i18n="sumEyebrow1">Release 1.1 Checklist</div>
+          <h3 data-i18n="sumTitle1">Everything included in HabitWhisper 1.1</h3>
+          <ul id="sum-list1">
+            <li>66-day Consolidation Index on every habit detail screen (Free).</li>
+            <li>Consolidation Map &amp; autopilot forecast in Progress → Overview (Free preview, full map in Pro).</li>
+            <li>Honest weekly streaks and current-week counts for flexible “N times per week” habits.</li>
+            <li>Multi-select permanent deletion of archived habits with confirmation and iCloud sync.</li>
+            <li>Four new languages: Spanish (Mexico), Portuguese (Brazil), German, and French (6 total).</li>
+            <li>Interactive 3-step What’s New tour (replayable in Settings) and native TipKit contextual tips.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:10px" data-i18n="sumEyebrow2">What didn’t change</div>
+          <h3 data-i18n="sumTitle2">Still calm, private, and yours</h3>
+          <ul id="sum-list2">
+            <li><strong>Zero accounts, zero ads, zero trackers:</strong> all habit consolidation math runs locally on your iPhone.</li>
+            <li><strong>Private iCloud sync:</strong> your history stays in your personal Apple iCloud container.</li>
+            <li><strong>Zero database migration hassle:</strong> your existing check-in history from 1.0 feeds the 66-day curve automatically on first launch.</li>
+            <li><strong>No intrusive pop-ups:</strong> the 1.1 tour appears once for returning users and yields automatically if you open the app from a widget or shortcut.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <img src="../assets/icon.png" alt="HabitWhisper icon" width="84" height="84" loading="lazy">
+      <h2 data-i18n="ctaTitle">Ready for a calmer rhythm?</h2>
+      <p data-i18n="ctaBody">Update HabitWhisper on the App Store for iPhone and iPhone Duo.</p>
+      <a class="button" id="wn-appstore-bottom" href="https://apps.apple.com/us/app/id6808374814">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg>
+        <span><small data-i18n="appStoreSmall">Available on the</small><span data-i18n="appStoreLabel">App Store</span></span>
+      </a>
+      <a class="button ghost" href="../support/" data-i18n="ctaSupport">Questions or feedback?</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 HabitWhisper</span>
+    <nav id="wn-footer-nav" aria-label="Footer">
+      <a href="../" data-i18n="navHome">Home</a>
+      <a href="../science/" data-i18n="navScience">Science</a>
+      <a href="../support/" data-i18n="navSupport">Support</a>
+      <a href="../privacy/" data-i18n="navPrivacy">Privacy policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i18n="navTerms">Terms of use</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+<script src="whats-new.js"></script>
+</body>
+</html>

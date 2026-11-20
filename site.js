@@ -11,6 +11,12 @@
     store('hw-theme', next);
   });
 
+  // Normalize 2-language pages when hw-lang holds a locale from /whats-new/ (es-MX, pt-BR, de, fr-FR).
+  if (root.dataset.multilang !== '6' && root.dataset.lang !== 'ru' && root.dataset.lang !== 'en') {
+    root.dataset.lang = 'en';
+    root.lang = 'en';
+  }
+
   // Language: swaps text blocks, metadata, aria-labels and localized screenshots.
   function applyLanguageMeta() {
     var lang = root.dataset.lang === 'ru' ? 'ru' : 'en';
