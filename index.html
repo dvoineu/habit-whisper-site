@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>HabitWhisper — habits, tasks, goals and a journal</title>
 <meta name="description" content="HabitWhisper brings habits, tasks, goals, a focus timer and a journal together in one calm iPhone app. No ads, no account, your data stays in your iCloud.">
 <meta name="theme-color" content="#F3F2F2" media="(prefers-color-scheme: light)">
@@ -15,7 +16,7 @@
 <link rel="stylesheet" href="style.css">
 <script>
 // Apply saved theme and language before paint to avoid a flash.
-(function(){try{var t=localStorage.getItem('hw-theme');if(t)document.documentElement.dataset.theme=t;var l=localStorage.getItem('hw-lang')||((navigator.language||'').toLowerCase().indexOf('ru')===0||(navigator.language||'').toLowerCase().indexOf('be')===0?'ru':'en');document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}})();
+(function(){try{var t=localStorage.getItem('hw-theme');if(t)document.documentElement.dataset.theme=t;var saved=localStorage.getItem('hw-lang');var l=(saved==='ru'||saved==='en')?saved:((navigator.language||'').toLowerCase().indexOf('ru')===0||(navigator.language||'').toLowerCase().indexOf('be')===0?'ru':'en');document.documentElement.dataset.lang=l;document.documentElement.lang=l}catch(e){}})();
 </script>
 </head>
 <body>
@@ -25,6 +26,7 @@
     <a class="brand" href="./"><img src="assets/icon.png" alt="" width="30" height="30">HabitWhisper</a>
     <nav class="nav" aria-label="Navigation">
       <a href="#features"><span data-l="en">Features</span><span data-l="ru">Возможности</span></a>
+      <a href="whats-new/"><span data-l="en">What’s New 1.1</span><span data-l="ru">Новое в 1.1</span></a>
       <a href="#compare"><span data-l="en">Compare</span><span data-l="ru">Сравнение</span></a>
       <a href="science/"><span data-l="en">Science</span><span data-l="ru">Наука</span></a>
       <a href="#mac">Mac</a>
@@ -46,6 +48,11 @@
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
     <div>
+      <a class="release-pill reveal" href="whats-new/">
+        <b>1.1</b>
+        <span data-l="en">66-day Consolidation Curve, Archive Cleanup &amp; 6 Languages →</span>
+        <span data-l="ru">Кривая 66 дней, очистка архива и 6 языков →</span>
+      </a>
       <div class="eyebrow reveal"><span data-l="en">A little progress, every day</span><span data-l="ru">Немного прогресса каждый день</span></div>
       <h1 class="reveal d1" style="margin-top:20px">
         <span data-l="en"><span class="line">A calm rhythm</span><span class="line">for your <span class="accent">day.</span></span></span>
@@ -181,8 +188,8 @@
       </div>
       <div class="tile t-e reveal d2">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18M3 12h18"/></svg></div>
-        <h3><span data-l="en">English &amp; Russian</span><span data-l="ru">Русский и английский</span></h3>
-        <p><span data-l="en">Fully localized, with light and dark appearance.</span><span data-l="ru">Полная локализация, светлая и тёмная тема.</span></p>
+        <h3><span data-l="en">6 languages</span><span data-l="ru">6 языков</span></h3>
+        <p><span data-l="en">English, Russian, Spanish, Portuguese, German and French — light and dark appearance.</span><span data-l="ru">Русский, английский, испанский, португальский, немецкий и французский — светлая и тёмная тема.</span></p>
       </div>
     </div>
   </div>
@@ -414,13 +421,13 @@
       <article class="road-card featured reveal d1">
         <div class="road-top">
           <span class="road-ver"><span data-l="en">Wave 1 · Update 1.1</span><span data-l="ru">Волна 1 · Релиз 1.1</span></span>
-          <span class="road-status active"><span data-l="en">In development</span><span data-l="ru">В разработке</span></span>
+          <span class="road-status active"><span data-l="en">Update 1.1 Guide</span><span data-l="ru">Гид по 1.1</span></span>
         </div>
         <h3><span data-l="en">66-Day Consolidation Index &amp; Weekly Rhythm</span><span data-l="ru">Индекс укоренения (66 дней) и недельные серии</span></h3>
-        <p><span data-l="en">Replaces brittle all-or-nothing chains with a non-linear automaticity score (0–100%), credits partial effort, tracks weekly streaks for flexible schedules, and adds a Pro Consolidation Map.</span><span data-l="ru">Заменяет хрупкие стрики шкалой автоматизма (0–100%), засчитывает частичные шаги, добавляет недельные серии для гибких привычек и Карту укоренения в Pro.</span></p>
+        <p><span data-l="en">Replaces brittle all-or-nothing chains with a non-linear automaticity score (0–100%), credits partial effort, tracks weekly streaks for flexible schedules, adds manual archive cleanup, 4 new languages, and a Pro Consolidation Map.</span><span data-l="ru">Заменяет хрупкие стрики шкалой автоматизма (0–100%), засчитывает частичные шаги, добавляет недельные серии для гибких привычек, ручную очистку архива, 4 новых языка и Карту укоренения в Pro.</span></p>
         <div class="road-cite">
-          <span data-l="en">Research: <cite>Lally et al. (2010)</cite>, <cite>Gardner et al. (2012 SRBAI)</cite>. <a class="road-link" href="science/66-days-automaticity.html">Read analysis →</a></span>
-          <span data-l="ru">Исследования: <cite>Lally et al. (2010)</cite>, <cite>Gardner et al. (2012 SRBAI)</cite>. <a class="road-link" href="science/66-days-automaticity.html">Читать разбор →</a></span>
+          <span data-l="en">Research: <cite>Lally et al. (2010)</cite>, <cite>Gardner et al. (2012 SRBAI)</cite>. <a class="road-link" href="whats-new/">What’s new &amp; how to use 1.1 →</a></span>
+          <span data-l="ru">Исследования: <cite>Lally et al. (2010)</cite>, <cite>Gardner et al. (2012 SRBAI)</cite>. <a class="road-link" href="whats-new/">Что нового и как пользоваться 1.1 →</a></span>
         </div>
       </article>
 
@@ -618,6 +625,7 @@
   <div class="wrap">
     <span>© 2026 HabitWhisper</span>
     <nav aria-label="Footer">
+      <a href="whats-new/"><span data-l="en">What’s New 1.1</span><span data-l="ru">Новое в 1.1</span></a>
       <a href="science/"><span data-l="en">Science &amp; Blog</span><span data-l="ru">Наука и блог</span></a>
       <a href="#compare"><span data-l="en">Compare</span><span data-l="ru">Сравнение</span></a>
       <a href="support/"><span data-l="en">Support</span><span data-l="ru">Поддержка</span></a>
