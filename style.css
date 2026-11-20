@@ -73,7 +73,14 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,
 .button small{display:block;font-size:.68rem;font-weight:600;opacity:.7;line-height:1}
 .button span{line-height:1.15}
 .button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.button.store-soon{background:var(--card);border:1px solid var(--line);color:var(--ink);text-align:left}
+.button.store-soon:hover{border-color:var(--accent)}
+.button.store-soon small{color:var(--muted);opacity:1}
 .button.accent-btn{background:var(--accent);color:#fff}
+.hero-sublink{margin-top:16px}
+.hero-sublink a{display:inline-flex;align-items:center;gap:4px;font-size:.92rem;font-weight:650;color:var(--muted);text-decoration:none;transition:color .2s}
+.hero-sublink a:hover{color:var(--ink)}
+.cta-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px}
 
 /* Hero */
 .hero{position:relative;padding:64px 0 40px;overflow:hidden}
