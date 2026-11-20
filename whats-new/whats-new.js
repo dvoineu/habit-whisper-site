@@ -146,7 +146,7 @@
         ['No intrusive pop-ups:', ' the 1.1 tour appears once for returning users and yields automatically if you open the app from a widget or shortcut.'],
       ],
       ctaTitle: 'Ready for a calmer rhythm?',
-      ctaBody: 'Update HabitWhisper on the App Store for iPhone and iPhone Duo.',
+      ctaBody: 'Update HabitWhisper on the App Store for iPhone and iPhone Duo — HabitWhisper for Android is also coming soon to Google Play.',
       ctaSupport: 'Questions or feedback?',
     },
 
@@ -294,7 +294,7 @@
         ['Без навязчивых окон:', ' мини-тур показывается один раз обновившимся пользователям и сам уступает дорогу, если вы открыли приложение из виджета или быстрого действия.'],
       ],
       ctaTitle: 'Готовы к более спокойному ритму?',
-      ctaBody: 'Обновите HabitWhisper в App Store для iPhone и iPhone Duo.',
+      ctaBody: 'Обновите HabitWhisper в App Store для iPhone и iPhone Duo — а версия HabitWhisper для Android скоро выйдет в Google Play.',
       ctaSupport: 'Вопросы или обратная связь?',
     },
 
@@ -442,7 +442,7 @@
         ['Sin interrupciones invasivas:', ' el recorrido 1.1 aparece una sola vez y cede el paso si abres la app desde un widget o acceso rápido.'],
       ],
       ctaTitle: '¿Listo para un ritmo más tranquilo?',
-      ctaBody: 'Actualiza HabitWhisper en el App Store para iPhone y iPhone Duo.',
+      ctaBody: 'Actualiza HabitWhisper en el App Store para iPhone y iPhone Duo — HabitWhisper para Android también llegará pronto a Google Play.',
       ctaSupport: '¿Preguntas o comentarios?',
     },
 
@@ -590,7 +590,7 @@
         ['Sem pop-ups invasivos:', ' o tour 1.1 aparece uma única vez e dá passagem se você abrir o app por widget ou atalho.'],
       ],
       ctaTitle: 'Pronto para um ritmo mais calmo?',
-      ctaBody: 'Atualize o HabitWhisper na App Store para iPhone e iPhone Duo.',
+      ctaBody: 'Atualize o HabitWhisper na App Store para iPhone e iPhone Duo — o HabitWhisper para Android também chegará em breve ao Google Play.',
       ctaSupport: 'Dúvidas ou sugestões?',
     },
 
@@ -738,7 +738,7 @@
         ['Keine aufdringlichen Pop-ups:', ' die 1.1-Tour erscheint einmalig und tritt zurück, wenn du die App per Widget oder Kurzbefehl öffnest.'],
       ],
       ctaTitle: 'Bereit für einen ruhigeren Rhythmus?',
-      ctaBody: 'Aktualisiere HabitWhisper im App Store für iPhone und iPhone Duo.',
+      ctaBody: 'Aktualisiere HabitWhisper im App Store für iPhone und iPhone Duo — HabitWhisper für Android erscheint ebenfalls bald bei Google Play.',
       ctaSupport: 'Fragen oder Feedback?',
     },
 
@@ -886,7 +886,7 @@
         ['Aucune fenêtre intrusive :', ' la visite 1.1 s’affiche une seule fois et s’efface si vous ouvrez l’app via un widget ou un raccourci.'],
       ],
       ctaTitle: 'Prêt pour un rythme plus serein ?',
-      ctaBody: 'Mettez à jour HabitWhisper dans l’App Store pour iPhone et iPhone Duo.',
+      ctaBody: 'Mettez à jour HabitWhisper dans l’App Store pour iPhone et iPhone Duo — HabitWhisper pour Android arrive aussi bientôt sur Google Play.',
       ctaSupport: 'Questions ou retours ?',
     },
   };

@@ -37,6 +37,12 @@
       var src = prefix + 'assets/screens/' + lang + '/' + img.dataset.shot + '.webp';
       if (img.getAttribute('src') !== src) img.setAttribute('src', src);
     });
+    document.querySelectorAll('img[data-android-en][data-android-ru]').forEach(function (img) {
+      var src = img.getAttribute(lang === 'ru' ? 'data-android-ru' : 'data-android-en');
+      if (src && img.getAttribute('src') !== src) img.setAttribute('src', src);
+      var alt = img.getAttribute(lang === 'ru' ? 'data-alt-ru' : 'data-alt-en');
+      if (alt) img.setAttribute('alt', alt);
+    });
   }
 
   var langBtn = document.querySelector('.lang-btn');
